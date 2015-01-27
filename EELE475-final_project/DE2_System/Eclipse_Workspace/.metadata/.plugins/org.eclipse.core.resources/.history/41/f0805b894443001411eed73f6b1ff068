@@ -1,0 +1,25 @@
+/*
+ * main.c
+ *
+ *  Created on: Sep 23, 2014
+ *      Author(s): 	Matthew Handley
+ *					David Keltgen
+ */
+
+#include <stdio.h>
+#include "gps.h"
+
+int main()
+{
+	char c;
+
+	gps_state_machine_reset();
+
+	while(1)
+	{
+		c = getchar();
+
+		//printf("%c",c);
+		gps_state_machine(c);
+	}
+}

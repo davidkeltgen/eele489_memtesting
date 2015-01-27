@@ -1,0 +1,168 @@
+/*************************************************************************
+* Copyright (c) 2009 Altera Corporation, San Jose, California, USA.      *
+* All rights reserved. All use of this software and documentation is     *
+* subject to the License Agreement located at the end of this file below.*
+*************************************************************************/
+/******************************************************************************
+ *
+ * Description
+ * ************* 
+ * A program which provides a means to test most of the devices on a Nios
+ * Development Board.  The devices covered in this test are, as follows:
+ *  - Seven Segment Display
+ *  - The D0-D7 LEDs (located just under the FPGA on most Development boards).
+ *      The classic "walking" LED will be displayed on these LEDs.
+ *  - UART test 
+ *      Tests UART functionality for the UART defined as STDOUT.
+ *      * JTAG UART device.
+ *  - The LCD Display
+ *      Displays a short message on the LCD Display.
+ *  - Buttons/Switches (SW0-SW3 on the Development boards, located right
+ *    under the FPGA.
+ *      This detects button presses, in a tight loop, and returns any
+ *      non-zero value.  
+ *  
+ * Requirements
+ * **************
+ * This program requires the following devices to be configured:
+ *   an LED PIO named 'led_pio',
+ *   a Seven Segment Display PIO named 'seven_seg_pio',
+ *   an LCD Display named 'lcd_display',
+ *   a Button PIO named 'button_pio',
+ *   a JTAG connection (to test the JTAG UART functionality)
+ *
+ * 
+ * Peripherals Exercised by SW
+ * *****************************
+ * LEDs
+ * Seven Segment Display
+ * LCD
+ * Buttons (SW0-SW3)
+ * JTAG UART
+ * 
+ *
+ * Software Files
+ * ****************
+ * board_diagnostics.c - This file.
+ *    - Implements a top level menu allowing the user to choose which 
+ * board components to test.
+ * 
+ * board_diagnostics.h
+ *    - A file containing the common includes and definitions for
+ * use within this code.
+ * 
+ */
+ 
+#include "board_diag.h"
+#define Switches (volatile int *) 0x01001050
+
+static void WriteLCD( char* string1, char* string2)
+{
+	FILE *lcd;
+	lcd = fopen("/dev/lcd_display", "w");
+
+	  /* Write strings to the LCD. */
+	  if (lcd != NULL )
+	  {
+	    fprintf(lcd, "\n%s\n", string1);
+	    fprintf(lcd, "%s\n",string2);
+	  }
+	fclose( lcd );
+}
+
+static int GetActiveSwitch()
+{
+	int switchValues, i;
+	int result = -1;
+
+	switchValues = *Switches;
+	for(i = 0; i < (sizeof(int) * 8);i++)
+	{
+
+		/* Mask the lower bit */
+		if((switchValues & 1) == 1)
+		{
+			/* switch at Ith position is on */
+			if(result == -1)
+			{
+				result = i;
+			}
+			else
+			{
+			   /* multiple switches are turned on */
+			   return -1;
+			}
+		}
+
+		/* Right shift switchValues 1 */
+		switchValues >>= 1;
+	 }
+	return result;
+	}
+
+
+int main()
+{
+  /* Declare variable for received character. */
+  int currentSwitch,previousSwitch, temp;
+  char s1[20];
+  char s2[20];
+
+
+  currentSwitch = -1;
+  previousSwitch = -1;
+
+  while (1)
+  {
+	  /* Get active switch */
+	  temp = GetActiveSwitch();
+
+	  if((currentSwitch != temp) && (temp != -1))
+	  {
+
+		  previousSwitch = currentSwitch;
+		  currentSwitch = temp;
+		  sprintf(s1,"SW %d is active", currentSwitch);
+		  if(previousSwitch != -1)
+		  {
+			  sprintf(s2,"SW %d used last", previousSwitch);
+		  }
+		  else
+		  {
+			  sprintf(s2,"");
+		  }
+		  WriteLCD(s1, s2);
+	  }
+  }
+  return( 0 );
+}
+/******************************************************************************
+*                                                                             *
+* License Agreement                                                           *
+*                                                                             *
+* Copyright (c) 2006 Altera Corporation, San Jose, California, USA.           *
+* All rights reserved.                                                        *
+*                                                                             *
+* Permission is hereby granted, free of charge, to any person obtaining a     *
+* copy of this software and associated documentation files (the "Software"),  *
+* to deal in the Software without restriction, including without limitation   *
+* the rights to use, copy, modify, merge, publish, distribute, sublicense,    *
+* and/or sell copies of the Software, and to permit persons to whom the       *
+* Software is furnished to do so, subject to the following conditions:        *
+*                                                                             *
+* The above copyright notice and this permission notice shall be included in  *
+* all copies or substantial portions of the Software.                         *
+*                                                                             *
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR  *
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,    *
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE *
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER      *
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING     *
+* FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         *
+* DEALINGS IN THE SOFTWARE.                                                   *
+*                                                                             *
+* This agreement shall be governed in all respects by the laws of the State   *
+* of California and by the laws of the United States of America.              *
+* Altera does not recommend, suggest or require that this reference design    *
+* file be used in conjunction or combination with any other product.          *
+******************************************************************************/

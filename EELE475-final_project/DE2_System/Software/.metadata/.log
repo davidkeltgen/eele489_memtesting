@@ -1,0 +1,31 @@
+!SESSION 2014-09-23 11:42:29.886 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -data C:\Users\z68j959\Documents\GitHub\EELE475\DE2_System\Software -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-09-23 11:43:13.225
+!MESSAGE Indexed 'hello_world_bsp' (77 sources, 123 headers) in 1.24 sec: 4,382 declarations; 5,450 references; 0 unresolved inclusions; 3 syntax errors; 18 unresolved names (0.18%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-09-23 11:43:13.495
+!MESSAGE Indexed 'gps_3' (2 sources, 69 headers) in 0.27 sec: 3,083 declarations; 3,159 references; 4 unresolved inclusions; 2 syntax errors; 6 unresolved names (0.10%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-09-23 11:43:14.083
+!MESSAGE Indexed 'lcd_bsp' (79 sources, 127 headers) in 0.59 sec: 4,533 declarations; 6,000 references; 0 unresolved inclusions; 3 syntax errors; 18 unresolved names (0.17%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-09-23 11:43:14.603
+!MESSAGE Indexed 'gps_3_bsp' (84 sources, 130 headers) in 0.52 sec: 4,645 declarations; 6,449 references; 0 unresolved inclusions; 3 syntax errors; 18 unresolved names (0.16%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-09-23 11:43:14.797
+!MESSAGE Indexed 'hello_world' (1 sources, 62 headers) in 0.19 sec: 2,386 declarations; 2,227 references; 0 unresolved inclusions; 2 syntax errors; 6 unresolved names (0.13%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-09-23 11:43:15.031
+!MESSAGE Indexed 'lcd' (1 sources, 65 headers) in 0.23 sec: 2,584 declarations; 2,396 references; 4 unresolved inclusions; 2 syntax errors; 6 unresolved names (0.12%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-09-23 11:43:15.717
+!MESSAGE Indexed 'lights_bsp' (77 sources, 123 headers) in 0.68 sec: 4,382 declarations; 5,450 references; 0 unresolved inclusions; 3 syntax errors; 18 unresolved names (0.18%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-09-23 11:43:15.875
+!MESSAGE Indexed 'lights' (1 sources, 59 headers) in 0.16 sec: 1,556 declarations; 1,527 references; 0 unresolved inclusions; 2 syntax errors; 6 unresolved names (0.19%)

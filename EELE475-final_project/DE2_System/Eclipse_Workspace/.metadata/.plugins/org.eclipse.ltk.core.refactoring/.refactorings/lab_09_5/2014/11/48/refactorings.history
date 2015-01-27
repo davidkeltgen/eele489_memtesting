@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;lab_09_5/count_binary.c&apos; to &apos;uart_interrupt.c&apos;" description="Rename resource &apos;count_binary.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="count_binary.c" name="uart_interrupt.c" stamp="1416936149578" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;lab_09_5/count_binary.h&apos; to &apos;uart_interrupt.h&apos;" description="Rename resource &apos;count_binary.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="count_binary.h" name="uart_interrupt.h" stamp="1416936156909" updateReferences="true"/>
+</session>

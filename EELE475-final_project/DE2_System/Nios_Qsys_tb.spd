@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys_BUTTONS_PIO.vhd"
+   type="VHDL"
+   library="BUTTONS_PIO" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys_sys_clk_timer.vhd"
+   type="VHDL"
+   library="sys_clk_timer" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys_lcd_display.vhd"
+   type="VHDL"
+   library="lcd_display" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys_sdram_controller_0.vhd"
+   type="VHDL"
+   library="sdram_controller_0" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys_jtag_uart.vhd"
+   type="VHDL"
+   library="jtag_uart" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys_LEDs.vhd"
+   type="VHDL"
+   library="LEDs" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys_Switches.vhd"
+   type="VHDL"
+   library="Switches" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys_cpu_nios.sdc"
+   type="SDC"
+   library="cpu_nios" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys_cpu_nios.vhd"
+   type="VHDL"
+   library="cpu_nios" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys_cpu_nios_jtag_debug_module_sysclk.vhd"
+   type="VHDL"
+   library="cpu_nios" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys_cpu_nios_jtag_debug_module_tck.vhd"
+   type="VHDL"
+   library="cpu_nios" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys_cpu_nios_jtag_debug_module_wrapper.vhd"
+   type="VHDL"
+   library="cpu_nios" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys_cpu_nios_nios2_waves.do"
+   type="OTHER"
+   library="cpu_nios" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys_cpu_nios_ociram_default_contents.dat"
+   type="DAT"
+   library="cpu_nios" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys_cpu_nios_ociram_default_contents.hex"
+   type="HEX"
+   library="cpu_nios" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys_cpu_nios_ociram_default_contents.mif"
+   type="MIF"
+   library="cpu_nios" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys_cpu_nios_oci_test_bench.vhd"
+   type="VHDL"
+   library="cpu_nios" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys_cpu_nios_rf_ram_a.dat"
+   type="DAT"
+   library="cpu_nios" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys_cpu_nios_rf_ram_a.hex"
+   type="HEX"
+   library="cpu_nios" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys_cpu_nios_rf_ram_a.mif"
+   type="MIF"
+   library="cpu_nios" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys_cpu_nios_rf_ram_b.dat"
+   type="DAT"
+   library="cpu_nios" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys_cpu_nios_rf_ram_b.hex"
+   type="HEX"
+   library="cpu_nios" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys_cpu_nios_rf_ram_b.mif"
+   type="MIF"
+   library="cpu_nios" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys_cpu_nios_test_bench.vhd"
+   type="VHDL"
+   library="cpu_nios" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/altera_avalon_reset_source.vhd"
+   type="VHDL"
+   library="Nios_Qsys_inst_reset_bfm" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/altera_avalon_clock_source.vhd"
+   type="VHDL"
+   library="Nios_Qsys_inst_clk_bfm" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/Nios_Qsys.vhd"
+   type="VHDL"
+   library="Nios_Qsys_inst" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/nios_qsys_cpu_nios_jtag_debug_module_translator_avalon_universal_slave_0_agent.vhd"
+   type="VHDL"
+   library="Nios_Qsys_inst" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/nios_qsys_sdram_controller_0_s1_translator_avalon_universal_slave_0_agent.vhd"
+   type="VHDL"
+   library="Nios_Qsys_inst" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/nios_qsys_width_adapter.vhd"
+   type="VHDL"
+   library="Nios_Qsys_inst" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/nios_qsys_width_adapter_001.vhd"
+   type="VHDL"
+   library="Nios_Qsys_inst" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/nios_qsys_cpu_nios_instruction_master_translator.vhd"
+   type="VHDL"
+   library="Nios_Qsys_inst" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/nios_qsys_cpu_nios_data_master_translator.vhd"
+   type="VHDL"
+   library="Nios_Qsys_inst" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/nios_qsys_cpu_nios_jtag_debug_module_translator.vhd"
+   type="VHDL"
+   library="Nios_Qsys_inst" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/nios_qsys_switches_s1_translator.vhd"
+   type="VHDL"
+   library="Nios_Qsys_inst" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/nios_qsys_leds_s1_translator.vhd"
+   type="VHDL"
+   library="Nios_Qsys_inst" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/nios_qsys_jtag_uart_avalon_jtag_slave_translator.vhd"
+   type="VHDL"
+   library="Nios_Qsys_inst" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/nios_qsys_sdram_controller_0_s1_translator.vhd"
+   type="VHDL"
+   library="Nios_Qsys_inst" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/nios_qsys_lcd_display_control_slave_translator.vhd"
+   type="VHDL"
+   library="Nios_Qsys_inst" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/nios_qsys_sys_clk_timer_s1_translator.vhd"
+   type="VHDL"
+   library="Nios_Qsys_inst" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/submodules/nios_qsys_programable_crc_module_0_s1_translator.vhd"
+   type="VHDL"
+   library="Nios_Qsys_inst" />
+ <file
+   path="Nios_Qsys/testbench/Nios_Qsys_tb/simulation/Nios_Qsys_tb.vhd"
+   type="VHDL" />
+ <topLevel name="Nios_Qsys_tb" />
+ <deviceFamily name="cycloneii" />
+</simPackage>

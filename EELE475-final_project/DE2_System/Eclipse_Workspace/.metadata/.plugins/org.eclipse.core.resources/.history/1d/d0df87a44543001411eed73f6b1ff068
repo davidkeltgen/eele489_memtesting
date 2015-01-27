@@ -1,0 +1,19 @@
+/*
+ * main.h
+ *
+ *  Created on: Sep 23, 2014
+ *      Author: Matthew Handley
+ *      		David Keltgen
+ */
+
+#ifndef MAIN_H_
+#define MAIN_H_
+
+/*** defines ***/
+#define Switches (volatile int *) 0x01001090
+
+/*** prototypes ***/
+static void WriteLCD( char* string1, char* string2);
+static int GetActiveSwitch();
+
+#endif /* MAIN_H_ */

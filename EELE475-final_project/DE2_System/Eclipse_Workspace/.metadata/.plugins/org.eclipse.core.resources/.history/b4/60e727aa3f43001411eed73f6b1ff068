@@ -1,0 +1,118 @@
+/*
+
+file gps.h
+
+Matthew Handley
+EELE475 HW2
+2014-09-16
+
+Header file for gps.c
+
+Contains typedefs, defines, and prototypes
+
+*/
+
+#ifndef GPS_H
+#define GPS_H
+
+
+/*** type definitions ***/
+typedef struct GPS_TIME_T
+{
+	char hour[3];
+	char minute[3];
+	char second[6];
+} GPS_TIME_T;
+
+typedef struct GPS_ANGLE_T
+{
+	char degrees[4];
+	char minutes[9];
+	char direction[2];
+} GPS_ANGLE_T;
+
+typedef struct GPS_ALT_T
+{
+	char alt[7];
+	char unit[2];
+} GPS_ALT_T;
+
+typedef struct GPS_SATID_T
+{
+	char id[3];
+} GPS_SATID_T;
+
+typedef struct GPGAA_T
+{
+	GPS_TIME_T 	time;
+	GPS_ANGLE_T	lat;
+	GPS_ANGLE_T	lon;
+	GPS_ALT_T	alt;
+} GPGAA_T;
+
+typedef struct GPGAA_D_T
+{
+	GPS_TIME_T 	time;
+	double		lat;
+	double		lon;
+	GPS_ALT_T	alt;
+} GPGAA_D_T;
+
+typedef struct GPGSA_T
+{
+	GPS_SATID_T	list[12];
+} GPGSA_T;
+
+typedef struct GPGSA_D_T
+{
+	double	list[12];
+} GPGSA_D_T;
+
+typedef union GPS_LOG_U
+{
+	GPGAA_T 	gpgaa;
+	GPGSA_T 	gpgsa;
+	GPGAA_D_T 	gpgaa_d;
+	GPGSA_D_T 	gpgsa_d;
+} GPS_LOG_U;
+
+typedef enum 
+{
+	GPGAA,
+	GPGSA,
+	GPGAA_D,
+	GPGSA_D
+} GPS_LOG_T;
+
+typedef enum
+{
+	NONE = 0,
+	SOME = 1,
+	ALL  = 2
+} DEBUG_LEVEL;
+
+
+/*** defines ***/
+#define debug_level NONE
+
+# define GPS_NUM_SATIDS 12 
+
+enum
+{
+	GPGAA_COL_TIME 		= 1,
+	GPGAA_COL_LON 		= 2,
+	GPGAA_COL_LON_DIR 	= 3,
+	GPGAA_COL_LAT		= 4,
+	GPGAA_COL_LAT_DIR	= 5,
+	GPGAA_COL_ALT		= 9,
+	GPGAA_COL_ALT_DIR	= 10	
+} GPGAA_COL;
+
+/*** prototypes ***/
+void gps_state_machine_reset	( void );
+void gps_state_machine			( char c );
+void gps_print_log				( void );
+void gps_convert_log			( void );
+
+
+#endif

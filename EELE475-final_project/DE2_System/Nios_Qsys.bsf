@@ -1,0 +1,202 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 544 520)
+	(text "Nios_Qsys" (rect 240 -1 286 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 504 20 516)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "clk_clk" (rect 0 0 27 12)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 61 46 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 240 72)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "switches_external_connection_export[17..0]" (rect 0 0 171 12)(font "Arial" (font_size 8)))
+		(text "switches_external_connection_export[17..0]" (rect 4 101 256 112)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 240 112)(line_width 3))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "reset_reset_n" (rect 0 0 56 12)(font "Arial" (font_size 8)))
+		(text "reset_reset_n" (rect 4 181 82 192)(font "Arial" (font_size 8)))
+		(line (pt 0 192)(pt 240 192)(line_width 1))
+	)
+	(port
+		(pt 0 488)
+		(input)
+		(text "buttons_pio_external_connection_export[2..0]" (rect 0 0 179 12)(font "Arial" (font_size 8)))
+		(text "buttons_pio_external_connection_export[2..0]" (rect 4 477 268 488)(font "Arial" (font_size 8)))
+		(line (pt 0 488)(pt 240 488)(line_width 3))
+	)
+	(port
+		(pt 0 152)
+		(output)
+		(text "leds_external_connection_export[17..0]" (rect 0 0 153 12)(font "Arial" (font_size 8)))
+		(text "leds_external_connection_export[17..0]" (rect 4 141 232 152)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 240 152)(line_width 3))
+	)
+	(port
+		(pt 0 232)
+		(output)
+		(text "sdram_addr[11..0]" (rect 0 0 71 12)(font "Arial" (font_size 8)))
+		(text "sdram_addr[11..0]" (rect 4 221 106 232)(font "Arial" (font_size 8)))
+		(line (pt 0 232)(pt 240 232)(line_width 3))
+	)
+	(port
+		(pt 0 248)
+		(output)
+		(text "sdram_ba[1..0]" (rect 0 0 60 12)(font "Arial" (font_size 8)))
+		(text "sdram_ba[1..0]" (rect 4 237 88 248)(font "Arial" (font_size 8)))
+		(line (pt 0 248)(pt 240 248)(line_width 3))
+	)
+	(port
+		(pt 0 264)
+		(output)
+		(text "sdram_cas_n" (rect 0 0 56 12)(font "Arial" (font_size 8)))
+		(text "sdram_cas_n" (rect 4 253 70 264)(font "Arial" (font_size 8)))
+		(line (pt 0 264)(pt 240 264)(line_width 1))
+	)
+	(port
+		(pt 0 280)
+		(output)
+		(text "sdram_cke" (rect 0 0 46 12)(font "Arial" (font_size 8)))
+		(text "sdram_cke" (rect 4 269 58 280)(font "Arial" (font_size 8)))
+		(line (pt 0 280)(pt 240 280)(line_width 1))
+	)
+	(port
+		(pt 0 296)
+		(output)
+		(text "sdram_cs_n" (rect 0 0 51 12)(font "Arial" (font_size 8)))
+		(text "sdram_cs_n" (rect 4 285 64 296)(font "Arial" (font_size 8)))
+		(line (pt 0 296)(pt 240 296)(line_width 1))
+	)
+	(port
+		(pt 0 328)
+		(output)
+		(text "sdram_dqm[1..0]" (rect 0 0 68 12)(font "Arial" (font_size 8)))
+		(text "sdram_dqm[1..0]" (rect 4 317 94 328)(font "Arial" (font_size 8)))
+		(line (pt 0 328)(pt 240 328)(line_width 3))
+	)
+	(port
+		(pt 0 344)
+		(output)
+		(text "sdram_ras_n" (rect 0 0 55 12)(font "Arial" (font_size 8)))
+		(text "sdram_ras_n" (rect 4 333 70 344)(font "Arial" (font_size 8)))
+		(line (pt 0 344)(pt 240 344)(line_width 1))
+	)
+	(port
+		(pt 0 360)
+		(output)
+		(text "sdram_we_n" (rect 0 0 53 12)(font "Arial" (font_size 8)))
+		(text "sdram_we_n" (rect 4 349 64 360)(font "Arial" (font_size 8)))
+		(line (pt 0 360)(pt 240 360)(line_width 1))
+	)
+	(port
+		(pt 0 400)
+		(output)
+		(text "lcd_RS" (rect 0 0 30 12)(font "Arial" (font_size 8)))
+		(text "lcd_RS" (rect 4 389 40 400)(font "Arial" (font_size 8)))
+		(line (pt 0 400)(pt 240 400)(line_width 1))
+	)
+	(port
+		(pt 0 416)
+		(output)
+		(text "lcd_RW" (rect 0 0 35 12)(font "Arial" (font_size 8)))
+		(text "lcd_RW" (rect 4 405 40 416)(font "Arial" (font_size 8)))
+		(line (pt 0 416)(pt 240 416)(line_width 1))
+	)
+	(port
+		(pt 0 448)
+		(output)
+		(text "lcd_E" (rect 0 0 23 12)(font "Arial" (font_size 8)))
+		(text "lcd_E" (rect 4 437 34 448)(font "Arial" (font_size 8)))
+		(line (pt 0 448)(pt 240 448)(line_width 1))
+	)
+	(port
+		(pt 0 312)
+		(bidir)
+		(text "sdram_dq[15..0]" (rect 0 0 64 12)(font "Arial" (font_size 8)))
+		(text "sdram_dq[15..0]" (rect 4 301 94 312)(font "Arial" (font_size 8)))
+		(line (pt 0 312)(pt 240 312)(line_width 3))
+	)
+	(port
+		(pt 0 432)
+		(bidir)
+		(text "lcd_data[7..0]" (rect 0 0 53 12)(font "Arial" (font_size 8)))
+		(text "lcd_data[7..0]" (rect 4 421 88 432)(font "Arial" (font_size 8)))
+		(line (pt 0 432)(pt 240 432)(line_width 3))
+	)
+	(drawing
+		(text "clk" (rect 225 43 468 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 245 67 508 144)(font "Arial" (color 0 0 0)))
+		(text "switches_external_connection" (rect 67 83 302 179)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 245 107 526 224)(font "Arial" (color 0 0 0)))
+		(text "leds_external_connection" (rect 94 123 332 259)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 245 147 526 304)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 211 163 452 339)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 245 187 532 384)(font "Arial" (color 0 0 0)))
+		(text "sdram" (rect 204 203 438 419)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "addr" (rect 245 227 514 464)(font "Arial" (color 0 0 0)))
+		(text "ba" (rect 245 243 502 496)(font "Arial" (color 0 0 0)))
+		(text "cas_n" (rect 245 259 520 528)(font "Arial" (color 0 0 0)))
+		(text "cke" (rect 245 275 508 560)(font "Arial" (color 0 0 0)))
+		(text "cs_n" (rect 245 291 514 592)(font "Arial" (color 0 0 0)))
+		(text "dq" (rect 245 307 502 624)(font "Arial" (color 0 0 0)))
+		(text "dqm" (rect 245 323 508 656)(font "Arial" (color 0 0 0)))
+		(text "ras_n" (rect 245 339 520 688)(font "Arial" (color 0 0 0)))
+		(text "we_n" (rect 245 355 514 720)(font "Arial" (color 0 0 0)))
+		(text "lcd" (rect 225 371 468 755)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "RS" (rect 245 395 502 800)(font "Arial" (color 0 0 0)))
+		(text "RW" (rect 245 411 502 832)(font "Arial" (color 0 0 0)))
+		(text "data" (rect 245 427 514 864)(font "Arial" (color 0 0 0)))
+		(text "E" (rect 245 443 496 896)(font "Arial" (color 0 0 0)))
+		(text "buttons_pio_external_connection" (rect 50 459 286 931)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 245 483 526 976)(font "Arial" (color 0 0 0)))
+		(text " Nios_Qsys " (rect 493 504 1052 1018)(font "Arial" ))
+		(line (pt 241 52)(pt 241 76)(line_width 1))
+		(line (pt 242 52)(pt 242 76)(line_width 1))
+		(line (pt 241 92)(pt 241 116)(line_width 1))
+		(line (pt 242 92)(pt 242 116)(line_width 1))
+		(line (pt 241 132)(pt 241 156)(line_width 1))
+		(line (pt 242 132)(pt 242 156)(line_width 1))
+		(line (pt 241 172)(pt 241 196)(line_width 1))
+		(line (pt 242 172)(pt 242 196)(line_width 1))
+		(line (pt 241 212)(pt 241 364)(line_width 1))
+		(line (pt 242 212)(pt 242 364)(line_width 1))
+		(line (pt 241 380)(pt 241 452)(line_width 1))
+		(line (pt 242 380)(pt 242 452)(line_width 1))
+		(line (pt 241 468)(pt 241 492)(line_width 1))
+		(line (pt 242 468)(pt 242 492)(line_width 1))
+		(line (pt 240 32)(pt 304 32)(line_width 1))
+		(line (pt 304 32)(pt 304 504)(line_width 1))
+		(line (pt 240 504)(pt 304 504)(line_width 1))
+		(line (pt 240 32)(pt 240 504)(line_width 1))
+		(line (pt 0 0)(pt 544 0)(line_width 1))
+		(line (pt 544 0)(pt 544 520)(line_width 1))
+		(line (pt 0 520)(pt 544 520)(line_width 1))
+		(line (pt 0 0)(pt 0 520)(line_width 1))
+	)
+)

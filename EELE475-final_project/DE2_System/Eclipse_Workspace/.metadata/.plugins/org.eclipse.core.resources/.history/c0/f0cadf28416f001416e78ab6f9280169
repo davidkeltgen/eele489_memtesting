@@ -1,0 +1,410 @@
+/******************************************************************************
+* Copyright (c) 2004 Altera Corporation, San Jose, California, USA.           *
+* All rights reserved. All use of this software and documentation is          *
+* subject to the License Agreement located at the end of this file below.     *
+*******************************************************************************
+*                                                                             *
+* This example demonstrates the use of MicroC/OS-II running on NIOS II.       *
+* In addition it is to serve as a good starting point for designs using       *
+* MicroC/OS-II with NIOSII.                                                   *
+*                                                                             *
+* There are 5 different task that are used in this example(There are two      *
+* additional task that are used for initialization and status). The send_task *
+* fills up a message queue and the two receive_tasks periodically pull message*
+* out of the queue.  The two getsem_tasks are contending for a shared         *
+* resource.                                                                   *
+*                                                                             *
+* See the MicroC/OS-II Tutorial for additional details on the design and the  *
+* minimum requirements for the design to function correctly.                  *
+*                                                                             *
+* The MicroC/OS-II Tutorial is located in <Nios II kit install dir>\documents.*
+*                                                                             *
+*   -Known Issues                                                             *
+*     If this design is run on the ISS, terminal output will take several     *
+*     minutes per iteration.                                                  *
+******************************************************************************/
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include "includes.h"
+#include "alt_ucosii_simple_error_check.h"
+#include "main.h"
+#include "gps.h"
+
+/* Definition of Task Stacks */
+#define   TASK_STACKSIZE       2048
+OS_STK    get_gps_task_stk[TASK_STACKSIZE];
+OS_STK    display_task_stk[TASK_STACKSIZE];
+OS_STK    pwm1_cntl_task_stk[TASK_STACKSIZE];
+OS_STK    pwm2_cntl_task_stk[TASK_STACKSIZE];
+OS_STK    initialize_task_stk[TASK_STACKSIZE];
+OS_STK    print_status_task_stk[TASK_STACKSIZE];
+OS_STK    getsem_task1_stk[TASK_STACKSIZE];
+OS_STK    getsem_task2_stk[TASK_STACKSIZE];
+OS_STK    receive_task1_stk[TASK_STACKSIZE];
+OS_STK    receive_task2_stk[TASK_STACKSIZE];
+OS_STK    send_task_stk[TASK_STACKSIZE];
+
+/* Definition of Task Prioities */
+#define INITIALIZE_TASK_PRIORITY   6
+#define GET_GPS_TASK_PRIORITY      9
+#define DISPLAY_TASK_PRIORITY     10
+#define PWM1_CNTL_TASK_PRIORITY    7
+#define PWM2_CNTL_TASK_PRIORITY    8
+
+
+/* Definition of Message Queue */
+#define   MSG_QUEUE_SIZE  30           /*Size of message queue used in example*/
+OS_EVENT  *msgqueue;                   /*Message queue pointer */
+void      *msgqueueTbl[MSG_QUEUE_SIZE];/*Storage for messages*/
+
+
+/* Definition of Semaphore */
+OS_EVENT *shared_resource_sem;
+
+/*globals*/
+
+INT32U number_of_messages_sent = 0;
+INT32U number_of_messages_received_task1 = 0;
+INT32U number_of_messages_received_task2 = 0;
+INT32U getsem_task1_got_sem = 0;
+INT32U getsem_task2_got_sem = 0;
+char sem_owner_task_name[20];
+extern char GGA_lat[20];            // variable for writing GGA values to LCD
+extern char GGA_lon[20];			// variable for writing GGA values to LCD
+extern char GGA_elev[20];            // variable for writing GSA values to LCD
+extern char GGA_time[20];			// variable for writing GSA values to LCD
+/* Local Function Prototypes */
+int initOSDataStructs(void);
+int initCreateTasks(void);
+
+/* this task reads in and parses GPS data from the RS-232 port */
+void get_gps_task (void* pdata)
+{
+	char c;
+	gps_init();
+
+	while(1)
+	{
+		c = getchar();
+		gps_state_machine(c);
+	}
+}
+
+
+/* this task determines what data to display based on switch inputs. It then writes that data to the LCD screen */
+void display_task (void* pdata)
+{
+	int switch_num;
+	char PWMs1[20];
+	char PWMs2[20];
+	/* reset LEDs to all off */
+	*LEDs = 0x00000000;
+	while(1)
+	{
+
+		switch_num = GetActiveSwitch();
+		switch(switch_num) {
+		case 0:
+			WriteLCD(GGA_lat,GGA_lon);
+			break;
+		case 1:
+			WriteLCD(GGA_elev, GGA_time);
+			break;
+		case 2:
+			/* Write out PWM values */
+			formatPWMStr(&PWMs1, &PWMs2);
+			WriteLCD(PWMs1, PWMs2);
+			break;
+		default:
+			break;
+		}
+	*LEDs = *Switches;
+	OSTimeDly(100);
+	}
+}
+
+/* this task control the value sent to pwm1, incrementing from -127 to 128 in steps of 10 every 1/2 second
+ * then decrementing from 128 to -127 in steps of 10 every 1/2 second
+ */
+void pwm1_cntl_task (void* pdata)
+{
+	/* if 1, increment, if 0 decrement */
+	int increment = 1;
+
+	*PWM1_CTRL 		= -128;
+	*PWM1_PERIOD 	= 0x000f4240;
+	*PWM1_NEUTRAL 	= 0x000124f8;
+	*PWM1_LARGEST 	= 0x000186a0;
+	*PWM1_SMALLEST 	= 0x0000c350;
+	*PWM1_ENABLE 	= 0x00000001;
+
+
+
+	while(1) {
+
+		/* Increment */
+		if (increment == 1) {
+			if((*PWM1_CTRL + 10) >=  127) {
+				increment = 0;
+				*PWM1_CTRL-=10;
+			}
+			else {
+				*PWM1_CTRL+=10;
+			}
+
+		}
+		else {
+			/* Decrement */
+			if((*PWM1_CTRL - 10) <=  -128) {
+				increment = 1;
+				*PWM1_CTRL+=10;
+			}
+			else {
+				*PWM1_CTRL-=10;
+			}
+		}
+		OSTimeDlyHMSM(0,0,0,500);
+	}
+
+}
+
+
+/* this task control the value sent to pwm2, incrementing from -127 to 128 in steps of 10 every 1/2 second
+ * then decrementing from 128 to -127 in steps of 10 every 1/2 second
+ */
+void pwm2_cntl_task (void* pdata)
+{
+	/* if 1, increment, if 0 decrement */
+	int increment = 1;
+
+	*PWM2_CTRL 		= -128;
+	*PWM2_PERIOD 	= 0x000f4240;
+	*PWM2_NEUTRAL 	= 0x000124f8;
+	*PWM2_LARGEST 	= 0x000186a0;
+	*PWM2_SMALLEST 	= 0x0000c350;
+	*PWM2_ENABLE 	= 0x00000001;
+
+
+
+	while(1) {
+
+		/* Increment */
+		if (increment == 1) {
+			if((*PWM2_CTRL + 10) >=  127) {
+				increment = 0;
+				*PWM2_CTRL-=10;
+			}
+			else {
+				*PWM2_CTRL+=10;
+			}
+
+		}
+		else {
+			/* Decrement */
+			if((*PWM2_CTRL - 10) <=  -128) {
+				increment = 1;
+				*PWM2_CTRL+=10;
+			}
+			else {
+				*PWM2_CTRL-=10;
+			}
+		}
+		OSTimeDlyHMSM(0,0,0,333);
+	}
+}
+
+/* The following task is used to initialize the operating system data structures
+ * and to create the task.   The task deletes itself as it is not 
+ * needed after initialization is complete.  The convention of creating a task 
+ * that is used to initialize the reset of the application is used by Labrosse.  
+ * The main purpose for doing this is to ensure that stack checking will 
+ * initialize correctly if enabled. See MicroC/OS-II The Real-Time Kernal text 
+ * book for details. 
+ */
+void  initialize_task(void* pdata)
+{
+  INT8U return_code = OS_NO_ERR;
+    
+  /*create os data structures */
+  initOSDataStructs();  
+
+  /* create the tasks */
+  initCreateTasks();
+  
+  /*This task is deleted because there is no need for it to run again */
+  return_code = OSTaskDel(OS_PRIO_SELF);
+  alt_ucosii_check_return_code(return_code);
+  while (1);
+}
+
+/* Main creates a single task and starts task switching
+ */
+ 
+int main (int argc, char* argv[], char* envp[])
+{
+  INT8U return_code = OS_NO_ERR;
+   
+  return_code = OSTaskCreateExt(initialize_task,
+                             NULL,
+                             (void *)&initialize_task_stk[TASK_STACKSIZE],
+                             INITIALIZE_TASK_PRIORITY,
+                             INITIALIZE_TASK_PRIORITY,
+                             initialize_task_stk,
+                             TASK_STACKSIZE,
+                             NULL,
+			     0);
+  alt_ucosii_check_return_code(return_code);
+  OSStart();
+  return 0;
+}
+
+/* This function simply creates a message queue and a semaphore
+ */
+ 
+int initOSDataStructs(void)
+{
+  msgqueue = OSQCreate(&msgqueueTbl[0], MSG_QUEUE_SIZE);
+  shared_resource_sem = OSSemCreate(1);
+  return 0;
+}
+/*This function creates the tasks used in this example
+ */
+ 
+int initCreateTasks(void)
+{
+  INT8U return_code = OS_NO_ERR;
+
+  return_code = OSTaskCreateExt(get_gps_task,
+                               NULL,
+                               (void *)&get_gps_task_stk[TASK_STACKSIZE],
+                               GET_GPS_TASK_PRIORITY,
+                               GET_GPS_TASK_PRIORITY,
+                               get_gps_task_stk,
+                               TASK_STACKSIZE,
+                               NULL,
+                               0);
+  alt_ucosii_check_return_code(return_code);
+
+  return_code = OSTaskCreateExt(display_task,
+                                 NULL,
+                                 (void *)&display_task_stk[TASK_STACKSIZE],
+                                 DISPLAY_TASK_PRIORITY,
+                                 DISPLAY_TASK_PRIORITY,
+                                 display_task_stk,
+                                 TASK_STACKSIZE,
+                                 NULL,
+                                 0);
+  alt_ucosii_check_return_code(return_code);
+
+  return_code = OSTaskCreateExt(pwm1_cntl_task,
+                                 NULL,
+                                 (void *)&pwm1_cntl_task_stk[TASK_STACKSIZE],
+                                 PWM1_CNTL_TASK_PRIORITY,
+                                 PWM1_CNTL_TASK_PRIORITY,
+                                 pwm1_cntl_task_stk,
+                                 TASK_STACKSIZE,
+                                 NULL,
+                                 0);
+  alt_ucosii_check_return_code(return_code);
+
+  return_code = OSTaskCreateExt(pwm2_cntl_task,
+                                 NULL,
+                                 (void *)&pwm2_cntl_task_stk[TASK_STACKSIZE],
+                                 PWM2_CNTL_TASK_PRIORITY,
+                                 PWM2_CNTL_TASK_PRIORITY,
+                                 pwm2_cntl_task_stk,
+                                 TASK_STACKSIZE,
+                                 NULL,
+                                 0);
+  alt_ucosii_check_return_code(return_code);
+  return 0;
+}
+
+void formatPWMStr(char * s1, char * s2)
+{
+	/* print altitude */
+	sprintf(s1, "PWM1 : %d", *PWM1_CTRL_R);
+	sprintf(s1, "PWM2 : %d", *PWM2_CTRL_R);
+	*PWM2_CTRL+=10;
+}
+
+void WriteLCD( char* string1, char* string2)
+{
+	FILE *lcd;
+	lcd = fopen("/dev/lcd_display", "w");
+
+	/* Write strings to the LCD. */
+	if (lcd != NULL )
+	{
+		fprintf(lcd, "\n%s\n", string1);
+		fprintf(lcd, "%s\n",string2);
+	}
+	else
+	{
+		printf("Could not open LCD file!\n");
+	}
+
+	fclose( lcd );
+}
+
+int GetActiveSwitch()
+{
+	int switchValues, i;
+	int result = -1;
+
+	switchValues = *Switches;
+	for(i = 0; i < (sizeof(int) * 8);i++)
+	{
+
+		/* Mask the lower bit */
+		if((switchValues & 1) == 1)
+		{
+			/* switch at Ith position is on */
+			if(result == -1)
+			{
+				result = i;
+			}
+			else
+			{
+			   /* multiple switches are turned on */
+			   return -1;
+			}
+		}
+
+		/* Right shift switchValues 1 */
+		switchValues >>= 1;
+	 }
+	return result;
+}
+
+/******************************************************************************
+*                                                                             *
+* License Agreement                                                           *
+*                                                                             *
+* Copyright (c) 2004 Altera Corporation, San Jose, California, USA.           *
+* All rights reserved.                                                        *
+*                                                                             *
+* Permission is hereby granted, free of charge, to any person obtaining a     *
+* copy of this software and associated documentation files (the "Software"),  *
+* to deal in the Software without restriction, including without limitation   *
+* the rights to use, copy, modify, merge, publish, distribute, sublicense,    *
+* and/or sell copies of the Software, and to permit persons to whom the       *
+* Software is furnished to do so, subject to the following conditions:        *
+*                                                                             *
+* The above copyright notice and this permission notice shall be included in  *
+* all copies or substantial portions of the Software.                         *
+*                                                                             *
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR  *
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,    *
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE *
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER      *
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING     *
+* FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         *
+* DEALINGS IN THE SOFTWARE.                                                   *
+*                                                                             *
+* This agreement shall be governed in all respects by the laws of the State   *
+* of California and by the laws of the United States of America.              *
+* Altera does not recommend, suggest or require that this reference design    *
+* file be used in conjunction or combination with any other product.          *
+******************************************************************************/

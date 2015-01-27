@@ -1,0 +1,41 @@
+/*************************************************************************
+* file: main.h
+* Name: Matthew Handley
+* 		David Keltgen
+* Date: 2014-11-25
+*
+*************************************************************************/
+
+
+#ifndef _MAIN_H_
+#define _MAIN_H_
+
+/*** includes ***/
+#include <stdio.h>
+
+/*** defines ***/
+#define CRC_BASE_ADDR (volatile int *) 0x00000400
+#define CRC_BLOCK_SIZE	128		// 32 registers
+#define CRC_REG_SIZE	4		// 4 bytes
+
+#define CRC_CTRL		((volatile int *)(CRC_BASE_ADDR) 	+ 0)
+#define CRC_VWORD		((volatile int *)(CRC_CTRL) 		+ CRC_REG_SIZE)		// read only
+#define CRC_DWIDTH		((volatile int *)(CRC_VWORD) 		+ CRC_REG_SIZE)
+#define CRC_PLEN		((volatile int *)(CRC_DWIDTH) 		+ CRC_REG_SIZE)
+#define CRC_POLY		((volatile int *)(CRC_PLEN) 		+ CRC_REG_SIZE)
+
+#define CRC_FIFO		((volatile int *)(CRC_BASE_ADDR) 	+ CRC_BLOCK_SIZE)
+#define CRC_SHIFT		((volatile int *)(CRC_FIFO) 		+ CRC_REG_SIZE)
+#define CRC_RESULT		((volatile int *)(CRC_SHIFT) 		+ CRC_REG_SIZE)
+
+#define CRC_CTRL_MSK_EN				0x00000001	// read-write
+#define CRC_CTRL_MSK_START			0x00000002	// read-write
+#define CRC_CTRL_MSK_FIFO_EMPTY		0x00000010	// read only
+#define CRC_CTRL_MSK_FIFO_FULL		0x00000020	// read only
+#define CRC_CTRL_MSK_COMPLETE		0x00000800	// read only
+
+
+/*** prototypes ***/
+
+
+#endif

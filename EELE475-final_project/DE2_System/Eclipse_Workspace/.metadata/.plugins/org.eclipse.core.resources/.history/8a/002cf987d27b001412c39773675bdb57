@@ -1,0 +1,20 @@
+/*************************************************************************
+* file: main.h
+* Name: Matthew Handley
+* 		David Keltgen
+* Date: 2014-11-25
+*
+*************************************************************************/
+
+
+#ifndef _MAIN_H_
+#define _MAIN_H_
+
+
+/*** defines ***/
+#define CRC_BASE_ADDR (volatile int *) 0x00000400
+
+/*** prototypes ***/
+
+
+#endif

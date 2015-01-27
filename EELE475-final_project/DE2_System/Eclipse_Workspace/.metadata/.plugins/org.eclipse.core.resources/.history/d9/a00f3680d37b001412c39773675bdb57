@@ -1,0 +1,34 @@
+/*************************************************************************
+* file: main.h
+* Name: Matthew Handley
+* 		David Keltgen
+* Date: 2014-11-25
+*
+*************************************************************************/
+
+
+#ifndef _MAIN_H_
+#define _MAIN_H_
+
+
+/*** defines ***/
+#define CRC_BASE_ADDR (volatile int *) 0x00000400
+#define CRC_BLOCK_SIZE	128		// 32 registers
+#define CRC_REG_SIZE	4		// 4 bytes
+
+#define CRC_CTRL		(CRC_BASE_ADDR 	+ 0)
+#define CRC_VWORD		(CRC_CTRL 		+ CRC_REG_SIZE)
+#define CRC_DWIDTH		(CRC_VWORD 		+ CRC_REG_SIZE)
+#define CRC_PLEN		(CRC_DWIDTH 	+ CRC_REG_SIZE)
+#define CRC_POLY		(CRC_PLEN 		+ CRC_REG_SIZE)
+
+#define CRC_FIFO		(CRC_BASE_ADDR 	+ CRC_BLOCK_SIZE)
+#define CRC_SHIFT		(CRC_FIFO 		+ CRC_REG_SIZE)
+#define CRC_RESULT		(CRC_SHIFT 		+ CRC_REG_SIZE)
+
+
+
+/*** prototypes ***/
+
+
+#endif

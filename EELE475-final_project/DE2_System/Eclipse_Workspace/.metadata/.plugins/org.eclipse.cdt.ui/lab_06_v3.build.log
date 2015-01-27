@@ -1,0 +1,10 @@
+
+**** Build of configuration Nios II for project lab_06_v3 ****
+
+make all 
+Info: Building ../lab_06_v3_bsp/
+make --no-print-directory -C ../lab_06_v3_bsp/
+[BSP build complete]
+[lab_06_v3 build complete]
+
+**** Build Finished ****
