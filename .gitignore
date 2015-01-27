@@ -1,43 +1,61 @@
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
 
-# Folder config file
-Desktop.ini
+# Libraries
+*.lib
+*.a
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
 
-# Windows shortcuts
-*.lnk
+# ignore Quartus II generated files
+*sopc_*
+*.jdi
+*.ptf.*
+*.sof
+*.pof
+*.qws
+*.smsg
+*_inst.vhd
+*_generation_script*
+*.done
+*.txt
+*.qarlog
+*.rpt
+*.summary
+*.qws
+*.cmp
+*.eqn
+*.html
+*.jpg
+*.bak
+*.qar
+*.sopc_builder
+*example*
+*~
+*.sdc
+*.pin
+*.mif
+*.hex
 
-# =========================
-# Operating System Files
-# =========================
-
-# OSX
-# =========================
-
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Thumbnails
-._*
-
-# Files that might appear on external disk
-.Spotlight-V100
-.Trashes
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
+# ignore Quartus II generated folders
+db/
+incremental_db/
+simulation/
+timing/
+testbench/
+*_sim/

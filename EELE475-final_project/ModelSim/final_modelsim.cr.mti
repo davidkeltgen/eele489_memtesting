@@ -1,0 +1,13 @@
+C:/Users/w92p177/Documents/GitHub/EELE475/ModelSim/crc_TB.vhd {0 {vcom -work work -2002 -explicit C:/Users/w92p177/Documents/GitHub/EELE475/ModelSim/crc_TB.vhd
+Model Technology ModelSim ALTERA vcom 10.1e Compiler 2013.06 Jun 12 2013
+** Error: (vcom-19) Failed to access library 'work' at "work".
+
+No such file or directory. (errno = ENOENT)
+
+} {3.0 4.0} {}} C:/Users/w92p177/Documents/GitHub/EELE475/ModelSim/crc_control.vhd {0 {vcom -work work -2002 -explicit C:/Users/w92p177/Documents/GitHub/EELE475/ModelSim/crc_control.vhd
+Model Technology ModelSim ALTERA vcom 10.1e Compiler 2013.06 Jun 12 2013
+** Error: (vcom-19) Failed to access library 'work' at "work".
+
+No such file or directory. (errno = ENOENT)
+
+} {3.0 4.0} {}}

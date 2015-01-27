@@ -1,0 +1,77 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\w92p177\Documents\GitHub\EELE475\ModelSim
+Ecrc_control
+Z1 w1418232060
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dC:\Users\w92p177\Documents\GitHub\EELE475\ModelSim
+Z6 8C:/Users/w92p177/Documents/GitHub/EELE475/ModelSim/crc_control.vhd
+Z7 FC:/Users/w92p177/Documents/GitHub/EELE475/ModelSim/crc_control.vhd
+l0
+L26
+V<XCTiQz]DeVl>lzaHi38l1
+!s100 ^Q97FmX1TnQBB<F:_T]ON1
+Z8 OV;C;10.1e;51
+32
+!i10b 1
+Z9 !s108 1418232156.141000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/w92p177/Documents/GitHub/EELE475/ModelSim/crc_control.vhd|
+Z11 !s107 C:/Users/w92p177/Documents/GitHub/EELE475/ModelSim/crc_control.vhd|
+Z12 o-work work -2002 -explicit -O0
+Z13 tExplicit 1
+Abehavioral
+R2
+R3
+R4
+Z14 DEx4 work 11 crc_control 0 22 <XCTiQz]DeVl>lzaHi38l1
+l82
+L51
+Vj7IdciJM;X1@JRezQmfW61
+!s100 4_BS<b5IP5>cBQzi1kT@D2
+R8
+32
+!i10b 1
+R9
+R10
+R11
+R12
+R13
+Ecrc_tb
+Z15 w1418231318
+R3
+R4
+R5
+Z16 8C:/Users/w92p177/Documents/GitHub/EELE475/ModelSim/crc_TB.vhd
+Z17 FC:/Users/w92p177/Documents/GitHub/EELE475/ModelSim/crc_TB.vhd
+l0
+L19
+Ve6PRhm6CbDREJI9fg1>X;2
+R8
+32
+Z18 !s108 1418231361.761000
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/w92p177/Documents/GitHub/EELE475/ModelSim/crc_TB.vhd|
+Z20 !s107 C:/Users/w92p177/Documents/GitHub/EELE475/ModelSim/crc_TB.vhd|
+R12
+R13
+!s100 XS@4g86?P]c[SRlBC:dDK2
+!i10b 1
+Acrc_tb_arch
+R3
+R4
+DEx4 work 6 crc_tb 0 22 e6PRhm6CbDREJI9fg1>X;2
+l77
+L22
+V?ND2GfDoL4TPQkU6J4B1=2
+R8
+32
+R18
+R19
+R20
+R12
+R13
+!s100 6hTSz<FfUJW=9F_18f5DO0
+!i10b 1

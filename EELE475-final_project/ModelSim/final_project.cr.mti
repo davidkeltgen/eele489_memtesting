@@ -1,0 +1,18 @@
+C:/Users/w92p177/Documents/GitHub/EELE475/ModelSim/crc_TB.vhd {1 {vcom -work work -2002 -explicit C:/Users/w92p177/Documents/GitHub/EELE475/ModelSim/crc_TB.vhd
+Model Technology ModelSim ALTERA vcom 10.1e Compiler 2013.06 Jun 12 2013
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity crc_TB
+-- Compiling architecture crc_TB_arch of crc_TB
+
+} {} {}} C:/Users/w92p177/Documents/GitHub/EELE475/ModelSim/crc_control.vhd {1 {vcom -work work -2002 -explicit C:/Users/w92p177/Documents/GitHub/EELE475/ModelSim/crc_control.vhd
+Model Technology ModelSim ALTERA vcom 10.1e Compiler 2013.06 Jun 12 2013
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity crc_control
+-- Compiling architecture Behavioral of crc_control
+
+} {} {}}
