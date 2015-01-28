@@ -221,7 +221,7 @@ begin
 	---------------------------------------------------
 	crc1 : crc_control Port Map ( 
 			   clk            => clk,
-			   reset          => not reset_n,
+			   reset          => '0',--not reset_n,
 
 				-- control register bits
 				enable			=> enable,

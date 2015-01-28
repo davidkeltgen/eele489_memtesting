@@ -282,11 +282,55 @@ architecture behavioral of DE2_Board_top_level is
 			c1				: OUT STD_LOGIC 
 		);
 	end component;
+	
+			component twoptram IS
+			PORT
+			(
+				clock		: IN STD_LOGIC  := '1';
+				data		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+				rdaddress		: IN STD_LOGIC_VECTOR (4 DOWNTO 0);
+				wraddress		: IN STD_LOGIC_VECTOR (4 DOWNTO 0);
+				wren		: IN STD_LOGIC  := '0';
+				q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+			);
+		END component twoptram;
+		
+		component clk_div IS
+	PORT
+	(
+		clock_48Mhz				: IN	STD_LOGIC;
+		clock_1MHz				: OUT	STD_LOGIC;
+		clock_100KHz			: OUT	STD_LOGIC;
+		clock_10KHz				: OUT	STD_LOGIC;
+		clock_1KHz				: OUT	STD_LOGIC;
+		clock_100Hz				: OUT	STD_LOGIC;
+		clock_10Hz				: OUT	STD_LOGIC;
+		clock_1Hz				: OUT	STD_LOGIC
+		);
+	
+END component clk_div;
+		
+		
 
 	signal dram_ba : std_logic_vector(1 downto 0); 
 	signal dram_dqm : std_logic_vector(1 downto 0); 
 	signal clk_nios : std_logic;
-	
+	signal ram_wren 		: std_logic;
+	signal rdaddress_sig : std_logic_vector(4 downto 0);
+	signal wraddress_sig : std_logic_vector(4 downto 0);
+	signal data_sig 		: std_logic_vector(7 downto 0);
+	signal q_sig			: std_logic_vector(7 downto 0);
+	signal rstate			: std_logic_vector(1 downto 0) := "00";
+	signal wrstate			: std_logic_vector(1 downto 0) := "00";
+	signal counter 		: integer := 0;
+	signal	clock_48Mhz			   :STD_LOGIC;
+	signal	clock_1MHz				:STD_LOGIC;
+	signal	clock_100KHz			: STD_LOGIC;
+	signal	clock_10KHz				: STD_LOGIC;
+	signal	clock_1KHz				: STD_LOGIC;
+	signal	clock_100Hz				: STD_LOGIC;
+	signal	clock_10Hz				: STD_LOGIC;
+	signal	clock_1Hz				: STD_LOGIC;
 
 
 begin
@@ -329,7 +373,26 @@ begin
 		c0	 		=> clk_nios,
 		c1	 		=> DRAM_CLK
 	);
+	
+	twoptram_inst : twoptram PORT MAP (
+		clock	 => CLOCK_50,
+		data	 => data_sig,
+		rdaddress	 => rdaddress_sig,
+		wraddress	 => wraddress_sig,
+		wren	 => ram_wren,
+		q	 => q_sig
+	);
 
+	clk_div_inst : clk_div PORT MAP (
+		clock_48Mhz			=> CLOCK_50,
+		clock_1MHz			=> clock_1MHz,
+		clock_100KHz		=> clock_100KHz,
+		clock_10KHz			=> clock_10KHz,
+		clock_1KHz			=> clock_1KHz,
+		clock_100Hz			=> clock_100Hz,
+		clock_10Hz			=> clock_10Hz,
+		clock_1Hz			=> clock_1Hz
+		);
 
 
    -----------------------------------------
@@ -341,7 +404,7 @@ begin
    -----------------------------------------
 	-- LEDs
 	--LEDR <= (others => '0');  -- 18 Red LEDs  '1' = ON,  '0' = OFF
-	LEDG <= (others => '0');  -- 9 Green LEDs '1' = ON,  '0' = OFF
+	LEDG(7 downto 0) <= q_sig;--( => '0');  -- 9 Green LEDs '1' = ON,  '0' = OFF
 	
 	-- 7-segment Displays (dot in displays cannot be used)
 	HEX0 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
@@ -469,6 +532,42 @@ begin
 	SD_DAT3  <= '0';
 	SD_CMD   <= '0';
 	SD_CLK   <= '0';
+	
+	wrmemtest : process(CLOCK_50)
+	begin
+		ram_wren <= '1';
+		if (wrstate = "00") then -- state 1
+			wraddress_sig <= "00000";
+			data_sig <= "00000001";
+			wrstate <= "01";
+		elsif (wrstate = "01") then -- state 2
+			wraddress_sig <= "00001";
+			data_sig <= "10000000";
+			wrstate <= "10";
+		--elsif (wrstate = "10") then -- state 3
+		--	wraddress_sig <= "00010";
+		--	data_sig <= "11100011";
+		--	wrstate <= "11";
+			--ram_wren <= '0';
+		end if;
+		
+	end process;
+
+rdmemtest : process(clock_1Hz)
+	begin
+		--if (ram_wren = '0') then
+			--if (rstate = "00") then
+				rdaddress_sig <= "00000";
+				--rstate <= "01";
+			--elsif (rstate = "01") then
+				rdaddress_sig <= "00001";
+			--	rstate <= "10";
+			--elsif (rstate = "10") then
+			--	rdaddress_sig <= "00010";
+			--	rstate <= "00";
+			--end if;
+		--end if;
+	end process;	
 
 end behavioral;
 
