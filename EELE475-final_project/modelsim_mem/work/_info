@@ -1,0 +1,77 @@
+m255
+K3
+13
+cModel Technology
+dC:\Users\w92p177\Documents\GitHub\EELE475\ModelSim
+Emem
+Z0 w1422552092
+Z1 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dC:\Users\w92p177\Documents\GitHub\eele489_memtesting\EELE475-final_project\modelsim_mem
+Z5 8C:/Users/w92p177/Documents/GitHub/eele489_memtesting/EELE475-final_project/modelsim_mem/mem.vhd
+Z6 FC:/Users/w92p177/Documents/GitHub/eele489_memtesting/EELE475-final_project/modelsim_mem/mem.vhd
+l0
+L5
+VI4O3_AT6VTG[ge[AMh=e41
+!s100 0mnYQVCm]jS71IA4]M;:;2
+Z7 OV;C;10.1d;51
+32
+!i10b 1
+Z8 !s108 1422553161.287000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/w92p177/Documents/GitHub/eele489_memtesting/EELE475-final_project/modelsim_mem/mem.vhd|
+Z10 !s107 C:/Users/w92p177/Documents/GitHub/eele489_memtesting/EELE475-final_project/modelsim_mem/mem.vhd|
+Z11 o-work work -2002 -explicit -O0
+Z12 tExplicit 1
+Artl
+R1
+R2
+R3
+Z13 DEx4 work 3 mem 0 22 I4O3_AT6VTG[ge[AMh=e41
+l64
+L18
+Z14 VMiZi42SNm9G1dZABbQDNe0
+Z15 !s100 RG6;^P3>JmXQIBB3DZ;iU2
+R7
+32
+!i10b 1
+R8
+R9
+R10
+R11
+R12
+Emem_tb
+Z16 w1422553156
+R2
+R3
+R4
+Z17 8C:\Users\w92p177\Documents\GitHub\eele489_memtesting\EELE475-final_project\modelsim_mem\mem_tb.vhd
+Z18 FC:\Users\w92p177\Documents\GitHub\eele489_memtesting\EELE475-final_project\modelsim_mem\mem_tb.vhd
+l0
+L4
+VM>H^a4R5bAzSO[]KOj^e30
+R7
+32
+Z19 !s108 1422553161.099000
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:\Users\w92p177\Documents\GitHub\eele489_memtesting\EELE475-final_project\modelsim_mem\mem_tb.vhd|
+Z21 !s107 C:\Users\w92p177\Documents\GitHub\eele489_memtesting\EELE475-final_project\modelsim_mem\mem_tb.vhd|
+R11
+R12
+!s100 dj`P`bbY`1G`=ECIAnoY;3
+!i10b 1
+Amem_tb_arch
+R2
+R3
+DEx4 work 6 mem_tb 0 22 M>H^a4R5bAzSO[]KOj^e30
+l33
+L7
+VUUA:H4mGLV]B:2RVfz0:z0
+R7
+32
+R19
+R20
+R21
+R11
+R12
+!s100 gUK=gao=71B0SzecPXdVf3
+!i10b 1

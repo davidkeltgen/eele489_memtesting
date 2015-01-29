@@ -257,7 +257,8 @@ architecture behavioral of DE2_Board_top_level is
             lcd_RW                              : out   std_logic;                                        -- RW
             lcd_data                            : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- data
             lcd_E                               : out   std_logic;                                        -- E
-            buttons_pio_external_connection_export : in    std_logic_vector(2 downto 0)  := (others => 'X')  -- export	
+            buttons_pio_external_connection_export : in    std_logic_vector(2 downto 0)  := (others => 'X')  -- export
+            --mem_module_0_export_export             : out   std_logic_vector(7 downto 0)                      -- export	
         );
     end component Nios_Qsys;
 	
@@ -283,17 +284,17 @@ architecture behavioral of DE2_Board_top_level is
 		);
 	end component;
 	
-			component twoptram IS
-			PORT
-			(
-				clock		: IN STD_LOGIC  := '1';
-				data		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-				rdaddress		: IN STD_LOGIC_VECTOR (4 DOWNTO 0);
-				wraddress		: IN STD_LOGIC_VECTOR (4 DOWNTO 0);
-				wren		: IN STD_LOGIC  := '0';
-				q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
-			);
-		END component twoptram;
+--			component twoptram IS
+--			PORT
+--			(
+--				clock		: IN STD_LOGIC  := '1';
+--				data		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+--				rdaddress		: IN STD_LOGIC_VECTOR (4 DOWNTO 0);
+--				wraddress		: IN STD_LOGIC_VECTOR (4 DOWNTO 0);
+--				wren		: IN STD_LOGIC  := '0';
+--				q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+--			);
+--		END component twoptram;
 		
 		component clk_div IS
 	PORT
@@ -309,6 +310,19 @@ architecture behavioral of DE2_Board_top_level is
 		);
 	
 END component clk_div;
+
+component mem IS
+ PORT(
+		  clk 			    : in std_logic;
+		  reset_n 		    : in std_logic;
+		  avs_s1_read		 : in std_logic;
+		  avs_s1_write 	 : in std_logic;
+		  avs_s1_address 	 : in std_logic_vector(4 downto 0);
+		  avs_s1_readdata	 : out std_logic_vector(7 downto 0);
+		  avs_s1_writedata : in std_logic_vector(7 downto 0);
+		  led_signal 			    : out std_logic_vector(7 downto 0)
+        );
+end component mem;
 		
 		
 
@@ -323,17 +337,26 @@ END component clk_div;
 	signal rstate			: std_logic_vector(1 downto 0) := "00";
 	signal wrstate			: std_logic_vector(1 downto 0) := "00";
 	signal counter 		: integer := 0;
-	signal	clock_48Mhz			   :STD_LOGIC;
-	signal	clock_1MHz				:STD_LOGIC;
-	signal	clock_100KHz			: STD_LOGIC;
-	signal	clock_10KHz				: STD_LOGIC;
-	signal	clock_1KHz				: STD_LOGIC;
-	signal	clock_100Hz				: STD_LOGIC;
-	signal	clock_10Hz				: STD_LOGIC;
-	signal	clock_1Hz				: STD_LOGIC;
+	
+	signal avs_s1_read	: std_logic;
+	signal avs_s1_write 	 : std_logic;
+	signal avs_s1_address 	: std_logic_vector(4 downto 0);
+	signal avs_s1_readdata	: std_logic_vector(7 downto 0);
+	signal avs_s1_writedata : std_logic_vector(7 downto 0);
+	signal led_signal 		: std_logic_vector(7 downto 0);
+ 
+--	signal	clock_48Mhz			   :STD_LOGIC;
+--	signal	clock_1MHz				:STD_LOGIC;
+--	signal	clock_100KHz			: STD_LOGIC;
+--	signal	clock_10KHz				: STD_LOGIC;
+--	signal	clock_1KHz				: STD_LOGIC;
+--	signal	clock_100Hz				: STD_LOGIC;
+--	signal	clock_10Hz				: STD_LOGIC;
+--	signal	clock_1Hz				: STD_LOGIC;
 
 
 begin
+
 
    ---------------------------------------------------------------
    -- Instantiate the NIOS component below this comment block
@@ -364,7 +387,8 @@ begin
             lcd_RW                              => LCD_RW,                              --                             .RW
             lcd_data                            => LCD_DATA,                            --                             .data
             lcd_E                               => LCD_EN,                               --                             .E
-				buttons_pio_external_connection_export => KEY(3 downto 1)  -- buttons_pio_external_connection.export
+				buttons_pio_external_connection_export => KEY(3 downto 1)  -- buttons_pio_external_connection.export,
+            --mem_module_0_export_export          => LEDG(7 downto 0)                      -- export
 
         ); 
 	  
@@ -374,25 +398,37 @@ begin
 		c1	 		=> DRAM_CLK
 	);
 	
-	twoptram_inst : twoptram PORT MAP (
-		clock	 => CLOCK_50,
-		data	 => data_sig,
-		rdaddress	 => rdaddress_sig,
-		wraddress	 => wraddress_sig,
-		wren	 => ram_wren,
-		q	 => q_sig
-	);
+--	twoptram_inst : twoptram PORT MAP (
+--		clock	 => CLOCK_50,
+--		data	 => data_sig,
+--		rdaddress	 => rdaddress_sig,
+--		wraddress	 => wraddress_sig,
+--		wren	 => ram_wren,
+--		q	 => q_sig
+--	);
 
-	clk_div_inst : clk_div PORT MAP (
-		clock_48Mhz			=> CLOCK_50,
-		clock_1MHz			=> clock_1MHz,
-		clock_100KHz		=> clock_100KHz,
-		clock_10KHz			=> clock_10KHz,
-		clock_1KHz			=> clock_1KHz,
-		clock_100Hz			=> clock_100Hz,
-		clock_10Hz			=> clock_10Hz,
-		clock_1Hz			=> clock_1Hz
-		);
+mem_inst : mem 
+ PORT MAP(
+		  clk 			    => CLOCK_50,
+		  reset_n 		    => KEY(0),
+		  avs_s1_read		 => avs_s1_read,
+		  avs_s1_write 	 => avs_s1_write,
+		  avs_s1_address 	 => avs_s1_address,
+		  avs_s1_readdata	 => avs_s1_readdata,
+		  avs_s1_writedata => avs_s1_writedata,
+		  led_signal 		=> led_signal
+        );
+
+--	clk_div_inst : clk_div PORT MAP (
+--		clock_48Mhz			=> CLOCK_50,
+--		clock_1MHz			=> clock_1MHz,
+--		clock_100KHz		=> clock_100KHz,
+--		clock_10KHz			=> clock_10KHz,
+--		clock_1KHz			=> clock_1KHz,
+--		clock_100Hz			=> clock_100Hz,
+--		clock_10Hz			=> clock_10Hz,
+--		clock_1Hz			=> clock_1Hz
+--		);
 
 
    -----------------------------------------
@@ -404,7 +440,8 @@ begin
    -----------------------------------------
 	-- LEDs
 	--LEDR <= (others => '0');  -- 18 Red LEDs  '1' = ON,  '0' = OFF
-	LEDG(7 downto 0) <= q_sig;--( => '0');  -- 9 Green LEDs '1' = ON,  '0' = OFF
+	--LEDG(7 downto 0) <= led_signal;--( => '0');  -- 9 Green LEDs '1' = ON,  '0' = OFF
+	LEDG(7 downto 0) <=led_signal;
 	
 	-- 7-segment Displays (dot in displays cannot be used)
 	HEX0 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
@@ -535,39 +572,47 @@ begin
 	
 	wrmemtest : process(CLOCK_50)
 	begin
-		ram_wren <= '1';
-		if (wrstate = "00") then -- state 1
-			wraddress_sig <= "00000";
-			data_sig <= "00000001";
-			wrstate <= "01";
-		elsif (wrstate = "01") then -- state 2
-			wraddress_sig <= "00001";
-			data_sig <= "10000000";
-			wrstate <= "10";
-		--elsif (wrstate = "10") then -- state 3
-		--	wraddress_sig <= "00010";
-		--	data_sig <= "11100011";
-		--	wrstate <= "11";
-			--ram_wren <= '0';
-		end if;
-		
+		avs_s1_write <= '1';
+		avs_s1_address <= "00000";
+		avs_s1_writedata <= "00010001";
 	end process;
-
-rdmemtest : process(clock_1Hz)
-	begin
-		--if (ram_wren = '0') then
-			--if (rstate = "00") then
-				rdaddress_sig <= "00000";
-				--rstate <= "01";
-			--elsif (rstate = "01") then
-				rdaddress_sig <= "00001";
-			--	rstate <= "10";
-			--elsif (rstate = "10") then
-			--	rdaddress_sig <= "00010";
-			--	rstate <= "00";
-			--end if;
-		--end if;
-	end process;	
+		
+	
+--	wrmemtest : process(CLOCK_50)
+--	begin
+--		ram_wren <= '1';
+--		if (wrstate = "00") then -- state 1
+--			wraddress_sig <= "00000";
+--			data_sig <= "00000001";
+--			wrstate <= "01";
+--		elsif (wrstate = "01") then -- state 2
+--			wraddress_sig <= "00001";
+--			data_sig <= "10000000";
+--			wrstate <= "10";
+--		--elsif (wrstate = "10") then -- state 3
+--		--	wraddress_sig <= "00010";
+--		--	data_sig <= "11100011";
+--		--	wrstate <= "11";
+--			--ram_wren <= '0';
+--		end if;
+--		
+--	end process;
+--
+--rdmemtest : process(clock_1Hz)
+--	begin
+--		--if (ram_wren = '0') then
+--			--if (rstate = "00") then
+--				rdaddress_sig <= "00000";
+--				--rstate <= "01";
+--			--elsif (rstate = "01") then
+--				rdaddress_sig <= "00001";
+--			--	rstate <= "10";
+--			--elsif (rstate = "10") then
+--			--	rdaddress_sig <= "00010";
+--			--	rstate <= "00";
+--			--end if;
+--		--end if;
+--	end process;	
 
 end behavioral;
 

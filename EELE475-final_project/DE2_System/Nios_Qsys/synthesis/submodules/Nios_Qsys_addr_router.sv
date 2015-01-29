@@ -136,8 +136,8 @@ module Nios_Qsys_addr_router
     // Figure out the number of bits to mask off for each slave span
     // during address decoding
     // -------------------------------------------------------
-    localparam PAD0 = log2ceil(64'h800 - 64'h400); 
-    localparam PAD1 = log2ceil(64'h840 - 64'h820); 
+    localparam PAD0 = log2ceil(64'h80 - 64'h60); 
+    localparam PAD1 = log2ceil(64'h800 - 64'h400); 
     localparam PAD2 = log2ceil(64'h860 - 64'h850); 
     localparam PAD3 = log2ceil(64'h1000000 - 64'h800000); 
     localparam PAD4 = log2ceil(64'h1001000 - 64'h1000800); 
@@ -193,16 +193,16 @@ module Nios_Qsys_addr_router
         // Sets the channel and destination ID based on the address
         // --------------------------------------------------
 
-    // ( 0x400 .. 0x800 )
-    if ( {address[RG:PAD0],{PAD0{1'b0}}} == 25'h400   ) begin
-            src_channel = 9'b100000000;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 2;
-    end
-
-    // ( 0x820 .. 0x840 )
-    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 25'h820   ) begin
+    // ( 0x60 .. 0x80 )
+    if ( {address[RG:PAD0],{PAD0{1'b0}}} == 25'h60   ) begin
             src_channel = 9'b001000000;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 8;
+    end
+
+    // ( 0x400 .. 0x800 )
+    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 25'h400   ) begin
+            src_channel = 9'b100000000;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 2;
     end
 
     // ( 0x850 .. 0x860 )

@@ -8,8 +8,7 @@ ENTITY mem IS
 		  reset_n 		    : in std_logic;
 		  avs_s1_read		 : in std_logic;
 		  avs_s1_write 	 : in std_logic;
-		  avs_s1_wraddress 	 : in std_logic_vector(4 downto 0);
-		  avs_s1_raddress  : in std_logic_vector(4 downto 0);
+		  avs_s1_address 	 : in std_logic_vector(4 downto 0);
 		  avs_s1_readdata	 : out std_logic_vector(7 downto 0);
 		  avs_s1_writedata : in std_logic_vector(7 downto 0);
 		  led_signal 			    : out std_logic_vector(7 downto 0)
@@ -56,17 +55,40 @@ END component clk_div;
 	signal rstate			: std_logic_vector(1 downto 0) := "00";
 	signal wrstate			: std_logic_vector(1 downto 0) := "00";
 	signal counter 		: integer := 0;
-	--signal 
+	
+	signal wre  : std_logic;
+	signal re   : std_logic;
+	signal addr : std_logic_vector(4 downto 0);
+	
 	
 begin
 
-led_signal <= q_sig;
+	wre  <= avs_s1_write;
+	re   <= avs_s1_read;
+	addr <= avs_s1_address;
+	--led_signal <= avs_s1_writedata;
+
+process (clk)
+		variable readdata : std_logic_vector(7 downto 0);
+	begin
+				ram_wren <= '1';
+				wraddress_sig <= addr;
+	end process;
+	
+	process (clk)
+		variable readdata : std_logic_vector(7 downto 0);
+	begin
+				rdaddress_sig <= addr;
+	end process;
+
+	led_signal <= q_sig;
+	avs_s1_readdata <= q_sig;
 
 	twoptram_inst : twoptram PORT MAP (
 		clock	 => clk,
 		data	 => avs_s1_writedata,
-		rdaddress	 => avs_s1_raddress,
-		wraddress	 => avs_s1_wraddress,
+		rdaddress	 => rdaddress_sig,
+		wraddress	 => wraddress_sig,
 		wren	 => ram_wren,
 		q	 => q_sig
 	);

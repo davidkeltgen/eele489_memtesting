@@ -1,0 +1,18 @@
+C:/Users/w92p177/Documents/GitHub/eele489_memtesting/EELE475-final_project/modelsim_mem/mem.vhd {1 {vcom -work work -2002 -explicit C:/Users/w92p177/Documents/GitHub/eele489_memtesting/EELE475-final_project/modelsim_mem/mem.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity mem
+-- Compiling architecture rtl of mem
+
+} {} {}} C:/Users/w92p177/Documents/GitHub/eele489_memtesting/EELE475-final_project/modelsim_mem/mem_tb.vhd {1 {vcom -work work -2002 -explicit {C:\Users\w92p177\Documents\GitHub\eele489_memtesting\EELE475-final_project\modelsim_mem\mem_tb.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mem_TB
+-- Compiling architecture mem_TB_arch of mem_TB
+
+} {} {}}
