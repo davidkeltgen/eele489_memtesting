@@ -483,6 +483,7 @@ set_global_assignment -name RESERVE_ASDO_AFTER_CONFIGURATION "USE AS REGULAR IO"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VHDL_FILE mem.vhd
 set_global_assignment -name VHDL_FILE CLK_DIV.VHD
 set_global_assignment -name VHDL_FILE crc_control.vhd
 set_global_assignment -name VHDL_FILE crc_avalon.vhd
