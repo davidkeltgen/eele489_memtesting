@@ -66,13 +66,14 @@ begin
 	wre  <= avs_s1_write;
 	re   <= avs_s1_read;
 	addr <= avs_s1_address;
-	--led_signal <= avs_s1_writedata;
+	led_signal(7 downto 1) <= "0000000";
+	led_signal(0) <= wre;
 
 process (clk)
 		variable readdata : std_logic_vector(7 downto 0);
 	begin
 				ram_wren <= '1';
-				wraddress_sig <= addr;
+				wraddress_sig <= addr; -- for testing purposes, addr should be zero (i will check that next
 	end process;
 	
 	process (clk)
@@ -81,7 +82,7 @@ process (clk)
 				rdaddress_sig <= addr;
 	end process;
 
-	led_signal <= q_sig;
+	--led_signal <= q_sig;
 	avs_s1_readdata <= q_sig;
 
 	twoptram_inst : twoptram PORT MAP (

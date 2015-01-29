@@ -257,8 +257,8 @@ architecture behavioral of DE2_Board_top_level is
             lcd_RW                              : out   std_logic;                                        -- RW
             lcd_data                            : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- data
             lcd_E                               : out   std_logic;                                        -- E
-            buttons_pio_external_connection_export : in    std_logic_vector(2 downto 0)  := (others => 'X')  -- export
-            --mem_module_0_export_export             : out   std_logic_vector(7 downto 0)                      -- export	
+            buttons_pio_external_connection_export : in    std_logic_vector(2 downto 0)  := (others => 'X');  -- export
+            mem_module_0_mem_ext_export        : out   std_logic_vector(7 downto 0)                      -- export                    -- export	
         );
     end component Nios_Qsys;
 	
@@ -338,12 +338,12 @@ end component mem;
 	signal wrstate			: std_logic_vector(1 downto 0) := "00";
 	signal counter 		: integer := 0;
 	
-	signal avs_s1_read	: std_logic;
-	signal avs_s1_write 	 : std_logic;
-	signal avs_s1_address 	: std_logic_vector(4 downto 0);
-	signal avs_s1_readdata	: std_logic_vector(7 downto 0);
-	signal avs_s1_writedata : std_logic_vector(7 downto 0);
-	signal led_signal 		: std_logic_vector(7 downto 0);
+--	signal avs_s1_read	: std_logic;
+--	signal avs_s1_write 	 : std_logic;
+--	signal avs_s1_address 	: std_logic_vector(4 downto 0);
+--	signal avs_s1_readdata	: std_logic_vector(7 downto 0);
+--	signal avs_s1_writedata : std_logic_vector(7 downto 0);
+--	signal led_signal 		: std_logic_vector(7 downto 0);
  
 --	signal	clock_48Mhz			   :STD_LOGIC;
 --	signal	clock_1MHz				:STD_LOGIC;
@@ -387,8 +387,8 @@ begin
             lcd_RW                              => LCD_RW,                              --                             .RW
             lcd_data                            => LCD_DATA,                            --                             .data
             lcd_E                               => LCD_EN,                               --                             .E
-				buttons_pio_external_connection_export => KEY(3 downto 1)  -- buttons_pio_external_connection.export,
-            --mem_module_0_export_export          => LEDG(7 downto 0)                      -- export
+				buttons_pio_external_connection_export => KEY(3 downto 1),  -- buttons_pio_external_connection.export,
+            mem_module_0_mem_ext_export         => LEDG(7 downto 0)                      -- export
 
         ); 
 	  
@@ -407,17 +407,17 @@ begin
 --		q	 => q_sig
 --	);
 
-mem_inst : mem 
- PORT MAP(
-		  clk 			    => CLOCK_50,
-		  reset_n 		    => KEY(0),
-		  avs_s1_read		 => avs_s1_read,
-		  avs_s1_write 	 => avs_s1_write,
-		  avs_s1_address 	 => avs_s1_address,
-		  avs_s1_readdata	 => avs_s1_readdata,
-		  avs_s1_writedata => avs_s1_writedata,
-		  led_signal 		=> led_signal
-        );
+--mem_inst : mem 
+-- PORT MAP(
+--		  clk 			    => CLOCK_50,
+--		  reset_n 		    => KEY(0),
+--		  avs_s1_read		 => avs_s1_read,
+--		  avs_s1_write 	 => avs_s1_write,
+--		  avs_s1_address 	 => avs_s1_address,
+--		  avs_s1_readdata	 => avs_s1_readdata,
+--		  avs_s1_writedata => avs_s1_writedata,
+--		  led_signal 		=> led_signal
+--        );
 
 --	clk_div_inst : clk_div PORT MAP (
 --		clock_48Mhz			=> CLOCK_50,
@@ -441,7 +441,7 @@ mem_inst : mem
 	-- LEDs
 	--LEDR <= (others => '0');  -- 18 Red LEDs  '1' = ON,  '0' = OFF
 	--LEDG(7 downto 0) <= led_signal;--( => '0');  -- 9 Green LEDs '1' = ON,  '0' = OFF
-	LEDG(7 downto 0) <=led_signal;
+	--LEDG(7 downto 0) <=led_signal;
 	
 	-- 7-segment Displays (dot in displays cannot be used)
 	HEX0 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
@@ -570,12 +570,12 @@ mem_inst : mem
 	SD_CMD   <= '0';
 	SD_CLK   <= '0';
 	
-	wrmemtest : process(CLOCK_50)
-	begin
-		avs_s1_write <= '1';
-		avs_s1_address <= "00000";
-		avs_s1_writedata <= "00010001";
-	end process;
+--	wrmemtest : process(CLOCK_50)
+--	begin
+--		avs_s1_write <= '1';
+--		avs_s1_address <= "00000";
+--		avs_s1_writedata <= "00010001";
+--	end process;
 		
 	
 --	wrmemtest : process(CLOCK_50)
