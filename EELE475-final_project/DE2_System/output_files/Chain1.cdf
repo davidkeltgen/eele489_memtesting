@@ -1,0 +1,13 @@
+/* Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version */
+JedecChain;
+	FileRevision(JESD32A);
+	DefaultMfr(6E);
+
+	P ActionCode(Cfg)
+		Device PartName(EP2C35F672) Path("C:/Users/w92p177/Documents/GitHub/eele489_memtesting/EELE475-final_project/DE2_System/output_files/") File("DE2_Board_top_level.sof") MfrSpec(OpMask(1));
+
+ChainEnd;
+
+AlteraBegin;
+	ChainType(JTAG);
+AlteraEnd;

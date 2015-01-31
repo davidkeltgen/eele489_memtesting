@@ -4,9 +4,9 @@
         <BspVersion>default</BspVersion>
         <BspGeneratedTimeStamp>Dec 9, 2014 11:59:53 AM</BspGeneratedTimeStamp>
         <BspGeneratedUnixTimeStamp>1418151593670</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>C:\Users\z68j959\Documents\GitHub\EELE475\DE2_System\Software\final_project_1_bsp</BspGeneratedLocation>
+        <BspGeneratedLocation>C:\Users\w92p177\Documents\GitHub\eele489_memtesting\EELE475\DE2_System\Software\final_project_1_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
-        <SopcDesignFile>C:\Users\z68j959\Documents\GitHub\EELE475\DE2_System\Nios_Qsys.sopcinfo</SopcDesignFile>
+        <SopcDesignFile>C:/Users/w92p177/1Documents/GitHub/eele489_memtesting/EELE475-final_project/DE2_System/Nios_Qsys.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>cpu_nios</Cpu>
         <SchemaVersion>1.9</SchemaVersion>

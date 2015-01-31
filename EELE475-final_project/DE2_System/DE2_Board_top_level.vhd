@@ -258,7 +258,7 @@ architecture behavioral of DE2_Board_top_level is
             lcd_data                            : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- data
             lcd_E                               : out   std_logic;                                        -- E
             buttons_pio_external_connection_export : in    std_logic_vector(2 downto 0)  := (others => 'X');  -- export
-            mem_module_0_mem_ext_export        : out   std_logic_vector(7 downto 0)                      -- export                    -- export	
+            mem_module_0_mem_ext_export        : out   std_logic_vector(8 downto 0)                      -- export                    -- export	
         );
     end component Nios_Qsys;
 	
@@ -388,7 +388,7 @@ begin
             lcd_data                            => LCD_DATA,                            --                             .data
             lcd_E                               => LCD_EN,                               --                             .E
 				buttons_pio_external_connection_export => KEY(3 downto 1),  -- buttons_pio_external_connection.export,
-            mem_module_0_mem_ext_export         => LEDG(7 downto 0)                      -- export
+            mem_module_0_mem_ext_export         => LEDG(8 downto 0)                      -- export
 
         ); 
 	  

@@ -38,14 +38,6 @@
          type = "boolean";
       }
    }
-   element Programable_CRC_Module_0
-   {
-      datum _sortIndex
-      {
-         value = "9";
-         type = "int";
-      }
-   }
    element Switches
    {
       datum _sortIndex
@@ -154,7 +146,7 @@
    {
       datum _sortIndex
       {
-         value = "10";
+         value = "9";
          type = "int";
       }
    }
@@ -168,6 +160,27 @@
       datum baseAddress
       {
          value = "16781632";
+         type = "String";
+      }
+   }
+   element sys_clk_timer.s1
+   {
+      datum baseAddress
+      {
+         value = "32";
+         type = "String";
+      }
+   }
+   element sdram_controller_0.s1
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "8388608";
          type = "String";
       }
    }
@@ -198,35 +211,6 @@
       }
    }
    element mem_module_0.s1
-   {
-      datum baseAddress
-      {
-         value = "64";
-         type = "String";
-      }
-   }
-   element sys_clk_timer.s1
-   {
-      datum baseAddress
-      {
-         value = "96";
-         type = "String";
-      }
-   }
-   element sdram_controller_0.s1
-   {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
-      datum baseAddress
-      {
-         value = "8388608";
-         type = "String";
-      }
-   }
-   element Programable_CRC_Module_0.s1
    {
       datum _lockedAddress
       {
@@ -280,7 +264,7 @@
  <parameter name="projectName" value="DE2_System.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1422556628643" />
+ <parameter name="timeStamp" value="1422721885382" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk.clk_in" type="clock" dir="end" />
@@ -418,8 +402,8 @@
   <parameter name="tightlyCoupledInstructionMaster1AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='mem_module_0.s1' start='0x40' end='0x60' /><slave name='sys_clk_timer.s1' start='0x60' end='0x80' /><slave name='Programable_CRC_Module_0.s1' start='0x400' end='0x800' /><slave name='BUTTONS_PIO.s1' start='0x850' end='0x860' /><slave name='sdram_controller_0.s1' start='0x800000' end='0x1000000' /><slave name='cpu_nios.jtag_debug_module' start='0x1000800' end='0x1001000' /><slave name='lcd_display.control_slave' start='0x1001130' end='0x1001140' /><slave name='LEDs.s1' start='0x1001140' end='0x1001150' /><slave name='Switches.s1' start='0x1001150' end='0x1001160' /><slave name='jtag_uart.avalon_jtag_slave' start='0x1001168' end='0x1001170' /></address-map>]]></parameter>
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='mem_module_0.s1' start='0x40' end='0x60' /><slave name='sys_clk_timer.s1' start='0x60' end='0x80' /><slave name='Programable_CRC_Module_0.s1' start='0x400' end='0x800' /><slave name='BUTTONS_PIO.s1' start='0x850' end='0x860' /><slave name='sdram_controller_0.s1' start='0x800000' end='0x1000000' /><slave name='cpu_nios.jtag_debug_module' start='0x1000800' end='0x1001000' /><slave name='lcd_display.control_slave' start='0x1001130' end='0x1001140' /><slave name='LEDs.s1' start='0x1001140' end='0x1001150' /><slave name='Switches.s1' start='0x1001150' end='0x1001160' /><slave name='jtag_uart.avalon_jtag_slave' start='0x1001168' end='0x1001170' /></address-map>]]></parameter>
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='sys_clk_timer.s1' start='0x20' end='0x40' /><slave name='mem_module_0.s1' start='0x400' end='0x800' /><slave name='BUTTONS_PIO.s1' start='0x850' end='0x860' /><slave name='sdram_controller_0.s1' start='0x800000' end='0x1000000' /><slave name='cpu_nios.jtag_debug_module' start='0x1000800' end='0x1001000' /><slave name='lcd_display.control_slave' start='0x1001130' end='0x1001140' /><slave name='LEDs.s1' start='0x1001140' end='0x1001150' /><slave name='Switches.s1' start='0x1001150' end='0x1001160' /><slave name='jtag_uart.avalon_jtag_slave' start='0x1001168' end='0x1001170' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sys_clk_timer.s1' start='0x20' end='0x40' /><slave name='mem_module_0.s1' start='0x400' end='0x800' /><slave name='BUTTONS_PIO.s1' start='0x850' end='0x860' /><slave name='sdram_controller_0.s1' start='0x800000' end='0x1000000' /><slave name='cpu_nios.jtag_debug_module' start='0x1000800' end='0x1001000' /><slave name='lcd_display.control_slave' start='0x1001130' end='0x1001140' /><slave name='LEDs.s1' start='0x1001140' end='0x1001150' /><slave name='Switches.s1' start='0x1001150' end='0x1001160' /><slave name='jtag_uart.avalon_jtag_slave' start='0x1001168' end='0x1001170' /></address-map>]]></parameter>
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="deviceFamilyName" value="Cyclone II" />
   <parameter name="internalIrqMaskSystemInfo" value="13" />
@@ -554,13 +538,6 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="3" />
   <parameter name="clockRate" value="50000000" />
- </module>
- <module
-   kind="Programable_CRC_Module"
-   version="1.0"
-   enabled="1"
-   name="Programable_CRC_Module_0">
-  <parameter name="AUTO_CLOCK_CLOCK_RATE" value="50000000" />
  </module>
  <module kind="mem_module" version="1.0" enabled="1" name="mem_module_0" />
  <connection
@@ -728,7 +705,7 @@
    start="cpu_nios.data_master"
    end="sys_clk_timer.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0060" />
+  <parameter name="baseAddress" value="0x0020" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -742,7 +719,7 @@
    start="cpu_nios.instruction_master"
    end="sys_clk_timer.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0060" />
+  <parameter name="baseAddress" value="0x0020" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="13.0" start="clk.clk" end="BUTTONS_PIO.clk" />
@@ -776,35 +753,7 @@
    end="BUTTONS_PIO.irq">
   <parameter name="irqNumber" value="3" />
  </connection>
- <connection
-   kind="clock"
-   version="13.0"
-   start="clk.clk"
-   end="Programable_CRC_Module_0.clock" />
- <connection
-   kind="reset"
-   version="13.0"
-   start="clk.clk_reset"
-   end="Programable_CRC_Module_0.reset" />
- <connection
-   kind="avalon"
-   version="13.0"
-   start="cpu_nios.data_master"
-   end="Programable_CRC_Module_0.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0400" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="13.0"
-   start="cpu_nios.instruction_master"
-   end="Programable_CRC_Module_0.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0400" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection kind="clock" version="13.0" start="clk.clk" end="mem_module_0.clock" />
+ <connection kind="clock" version="13.0" start="clk.clk" end="mem_module_0.clk" />
  <connection
    kind="reset"
    version="13.0"
@@ -813,19 +762,19 @@
  <connection
    kind="avalon"
    version="13.0"
-   start="cpu_nios.instruction_master"
+   start="cpu_nios.data_master"
    end="mem_module_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0040" />
+  <parameter name="baseAddress" value="0x0400" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="13.0"
-   start="cpu_nios.data_master"
+   start="cpu_nios.instruction_master"
    end="mem_module_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0040" />
+  <parameter name="baseAddress" value="0x0400" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />

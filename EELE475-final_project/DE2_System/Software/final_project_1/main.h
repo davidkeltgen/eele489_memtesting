@@ -12,9 +12,14 @@
 
 /*** includes ***/
 #include <stdio.h>
+#include <unistd.h>
 
 /*** defines ***/
-#define CRC_BASE_ADDR 	0x00000400
+//#define CRC_BASE_ADDR 	0x00000400
+#define MEM_BASE_ADDR 	((volatile int *) 0x00000400)
+#define LEDs 			((volatile int *) 0x01001140)
+
+
 #define CRC_BLOCK_SIZE	(0x20*4)		// 32 4-byte registers
 
 #define CRC_Block_1 	(CRC_BASE_ADDR)

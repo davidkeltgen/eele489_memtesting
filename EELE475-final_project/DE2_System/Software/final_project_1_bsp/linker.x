@@ -2,8 +2,7 @@
  * linker.x - Linker script
  *
  * Machine generated for CPU 'cpu_nios' in SOPC Builder design 'Nios_Qsys'
- * SOPC Builder design path: C:/Users/z68j959/Documents/GitHub/EELE475/DE2_System/Nios_Qsys.sopcinfo
- *
+ * SOPC Builder design path: C:/Users/w92p177/1Documents/GitHub/eele489_memtesting/EELE475-final_project/DE2_System/Nios_Qsys.sopcinfo
  * Generated: Sun Dec 07 13:47:02 MST 2014
  */
 

@@ -16,12 +16,12 @@
 FUNCTION twoptram 
 (
 	clock,
-	data[7..0],
-	rdaddress[4..0],
-	wraddress[4..0],
+	data[31..0],
+	rdaddress[7..0],
+	wraddress[7..0],
 	wren
 )
 
 RETURNS (
-	q[7..0]
+	q[31..0]
 );

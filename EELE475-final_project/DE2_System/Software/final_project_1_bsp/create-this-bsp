@@ -5,7 +5,7 @@
 BSP_TYPE=hal
 BSP_DIR=.
 SOPC_DIR=../../
-SOPC_FILE=C:/Users/z68j959/Documents/GitHub/EELE475/DE2_System/Nios_Qsys.sopcinfo
+SOPC_FILE=C:/Users/w92p177/1Documents/GitHub/eele489_memtesting/EELE475-final_project/DE2_System/Nios_Qsys.sopcinfo
 NIOS2_BSP_ARGS=""
 CPU_NAME=
 

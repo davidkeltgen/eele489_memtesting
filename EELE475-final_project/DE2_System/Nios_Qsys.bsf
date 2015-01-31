@@ -138,8 +138,8 @@ applicable agreement for further details.
 	(port
 		(pt 0 528)
 		(output)
-		(text "mem_module_0_mem_ext_export[7..0]" (rect 0 0 161 12)(font "Arial" (font_size 8)))
-		(text "mem_module_0_mem_ext_export[7..0]" (rect 4 517 202 528)(font "Arial" (font_size 8)))
+		(text "mem_module_0_mem_ext_export[8..0]" (rect 0 0 161 12)(font "Arial" (font_size 8)))
+		(text "mem_module_0_mem_ext_export[8..0]" (rect 4 517 202 528)(font "Arial" (font_size 8)))
 		(line (pt 0 528)(pt 240 528)(line_width 3))
 	)
 	(port
