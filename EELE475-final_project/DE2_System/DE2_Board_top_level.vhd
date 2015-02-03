@@ -238,29 +238,29 @@ architecture behavioral of DE2_Board_top_level is
    -- change end entity to end component
    ---------------------------------------------------------------
 	
---	 component Nios_Qsys is
---        port (
---            clk_clk                             : in    std_logic                     := 'X';             -- clk
---            switches_external_connection_export : in    std_logic_vector(17 downto 0) := (others => 'X'); -- export
---            leds_external_connection_export     : out   std_logic_vector(17 downto 0);                    -- export
---            reset_reset_n                       : in    std_logic                     := 'X';             -- reset_n
---            sdram_addr                          : out   std_logic_vector(11 downto 0);                    -- addr
---            sdram_ba                            : out   std_logic_vector(1 downto 0);                     -- ba
---            sdram_cas_n                         : out   std_logic;                                        -- cas_n
---            sdram_cke                           : out   std_logic;                                        -- cke
---            sdram_cs_n                          : out   std_logic;                                        -- cs_n
---            sdram_dq                            : inout std_logic_vector(15 downto 0) := (others => 'X'); -- dq
---            sdram_dqm                           : out   std_logic_vector(1 downto 0);                     -- dqm
---            sdram_ras_n                         : out   std_logic;                                        -- ras_n
---            sdram_we_n                          : out   std_logic;                                        -- we_n
---            lcd_RS                              : out   std_logic;                                        -- RS
---            lcd_RW                              : out   std_logic;                                        -- RW
---            lcd_data                            : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- data
---            lcd_E                               : out   std_logic;                                        -- E
---            buttons_pio_external_connection_export : in    std_logic_vector(2 downto 0)  := (others => 'X');  -- export
---            mem_module_0_mem_ext_export        : out   std_logic_vector(8 downto 0)                      -- export                    -- export	
---        );
---    end component Nios_Qsys;
+	 component Nios_Qsys is
+        port (
+            clk_clk                             : in    std_logic                     := 'X';             -- clk
+            switches_external_connection_export : in    std_logic_vector(17 downto 0) := (others => 'X'); -- export
+            leds_external_connection_export     : out   std_logic_vector(17 downto 0);                    -- export
+            reset_reset_n                       : in    std_logic                     := 'X';             -- reset_n
+            sdram_addr                          : out   std_logic_vector(11 downto 0);                    -- addr
+            sdram_ba                            : out   std_logic_vector(1 downto 0);                     -- ba
+            sdram_cas_n                         : out   std_logic;                                        -- cas_n
+            sdram_cke                           : out   std_logic;                                        -- cke
+            sdram_cs_n                          : out   std_logic;                                        -- cs_n
+            sdram_dq                            : inout std_logic_vector(15 downto 0) := (others => 'X'); -- dq
+            sdram_dqm                           : out   std_logic_vector(1 downto 0);                     -- dqm
+            sdram_ras_n                         : out   std_logic;                                        -- ras_n
+            sdram_we_n                          : out   std_logic;                                        -- we_n
+            lcd_RS                              : out   std_logic;                                        -- RS
+            lcd_RW                              : out   std_logic;                                        -- RW
+            lcd_data                            : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- data
+            lcd_E                               : out   std_logic;                                        -- E
+            buttons_pio_external_connection_export : in    std_logic_vector(2 downto 0)  := (others => 'X');  -- export
+            mem_module_0_mem_ext_con_export        : out   std_logic_vector(8 downto 0)                      -- export                    -- export	
+        );
+    end component Nios_Qsys;
 	
 	--Copyright (C) 1991-2013 Altera Corporation
 	--Your use of Altera Corporation's design tools, logic functions 
@@ -311,18 +311,18 @@ architecture behavioral of DE2_Board_top_level is
 	
 END component clk_div;
 
-component mem IS
- PORT(
-		  clk 			    : in std_logic;
-		  reset_n 		    : in std_logic;
-		  avs_s1_read		 : in std_logic;
-		  avs_s1_write 	 : in std_logic;
-		  avs_s1_address 	 : in std_logic_vector(7 downto 0);
-		  avs_s1_readdata	 : out std_logic_vector(31 downto 0);
-		  avs_s1_writedata : in std_logic_vector(31 downto 0);
-		  led_signal 			    : out std_logic_vector(8 downto 0)
-        );
-end component mem;
+--component mem IS
+-- PORT(
+--		  clk 			    : in std_logic;
+--		  reset_n 		    : in std_logic;
+--		  avs_s1_read		 : in std_logic;
+--		  avs_s1_write 	 : in std_logic;
+--		  avs_s1_address 	 : in std_logic_vector(7 downto 0);
+--		  avs_s1_readdata	 : out std_logic_vector(31 downto 0);
+--		  avs_s1_writedata : in std_logic_vector(31 downto 0);
+--		  led_signal 			    : out std_logic_vector(8 downto 0)
+--        );
+--end component mem;
 		
 		
 
@@ -377,29 +377,29 @@ begin
    -- Add the appropriate signal names to the signal connections
    ---------------------------------------------------------------
 
---    u0 : component Nios_Qsys
---        port map (
---            clk_clk                             => clk_nios,                           --                          clk.clk
---            switches_external_connection_export => SW, 											-- switches_external_connection.export
---            leds_external_connection_export     => LEDR,     									--     leds_external_connection.export
---            reset_reset_n                       => KEY(0),                       		--                        reset.reset_n
---            sdram_addr                          => DRAM_ADDR,                          --                        sdram.addr
---            sdram_ba                            => dram_ba,                            --                             .ba
---            sdram_cas_n                         => DRAM_CAS_N,                         --                             .cas_n
---            sdram_cke                           => DRAM_CKE,                           --                             .cke
---            sdram_cs_n                          => DRAM_CS_N,                          --                             .cs_n
---            sdram_dq                            => DRAM_DQ,                            --                             .dq
---            sdram_dqm                           => dram_dqm,                           --                             .dqm
---            sdram_ras_n                         => DRAM_RAS_N,                         --                             .ras_n
---            sdram_we_n                          => DRAM_WE_N,                           --                             .we_n
---				lcd_RS                              => LCD_RS,                              --                          lcd.RS
---            lcd_RW                              => LCD_RW,                              --                             .RW
---            lcd_data                            => LCD_DATA,                            --                             .data
---            lcd_E                               => LCD_EN,                               --                             .E
---				buttons_pio_external_connection_export => KEY(3 downto 1),  -- buttons_pio_external_connection.export,
---            mem_module_0_mem_ext_export         => LEDG(8 downto 0)                      -- export
---
---        ); 
+    u0 : component Nios_Qsys
+        port map (
+            clk_clk                             => clk_nios,                           --                          clk.clk
+            switches_external_connection_export => SW, 											-- switches_external_connection.export
+            leds_external_connection_export     => LEDR,     									--     leds_external_connection.export
+            reset_reset_n                       => KEY(0),                       		--                        reset.reset_n
+            sdram_addr                          => DRAM_ADDR,                          --                        sdram.addr
+            sdram_ba                            => dram_ba,                            --                             .ba
+            sdram_cas_n                         => DRAM_CAS_N,                         --                             .cas_n
+            sdram_cke                           => DRAM_CKE,                           --                             .cke
+            sdram_cs_n                          => DRAM_CS_N,                          --                             .cs_n
+            sdram_dq                            => DRAM_DQ,                            --                             .dq
+            sdram_dqm                           => dram_dqm,                           --                             .dqm
+            sdram_ras_n                         => DRAM_RAS_N,                         --                             .ras_n
+            sdram_we_n                          => DRAM_WE_N,                           --                             .we_n
+				lcd_RS                              => LCD_RS,                              --                          lcd.RS
+            lcd_RW                              => LCD_RW,                              --                             .RW
+            lcd_data                            => LCD_DATA,                            --                             .data
+            lcd_E                               => LCD_EN,                               --                             .E
+				buttons_pio_external_connection_export => KEY(3 downto 1),  -- buttons_pio_external_connection.export,
+            mem_module_0_mem_ext_con_export         => LEDG(8 downto 0)                      -- export
+
+        ); 
 	  
   clockPLL_inst : clockPLL PORT MAP (
 		inclk0	=> CLOCK_50,
@@ -416,17 +416,17 @@ begin
 --		q	 => q_sig
 --	);
 
-mem_inst : mem 
- PORT MAP(
-		  clk 			    => CLOCK_50,
-		  reset_n 		    => KEY(0),
-		  avs_s1_read		 => avs_s1_read,
-		  avs_s1_write 	 => avs_s1_write,
-		  avs_s1_address 	 => avs_s1_address,
-		  avs_s1_readdata	 => avs_s1_readdata,
-		  avs_s1_writedata => avs_s1_writedata,
-		  led_signal 		=> led_signal
-        );
+--mem_inst : mem 
+-- PORT MAP(
+--		  clk 			    => CLOCK_50,
+--		  reset_n 		    => KEY(0),
+--		  avs_s1_read		 => avs_s1_read,
+--		  avs_s1_write 	 => avs_s1_write,
+--		  avs_s1_address 	 => avs_s1_address,
+--		  avs_s1_readdata	 => avs_s1_readdata,
+--		  avs_s1_writedata => avs_s1_writedata,
+--		  led_signal 		=> led_signal
+--        );
 
 --	clk_div_inst : clk_div PORT MAP (
 --		clock_48Mhz			=> CLOCK_50,
@@ -450,8 +450,9 @@ mem_inst : mem
 	-- LEDs
 	--LEDR <= (others => '0');  -- 18 Red LEDs  '1' = ON,  '0' = OFF
 	--LEDG(7 downto 0) <= led_signal;--( => '0');  -- 9 Green LEDs '1' = ON,  '0' = OFF
-	--LEDG(7 downto 0) <=led_signal;
-	  LEDG(7 downto 0) <= avs_s1_readdata(7 downto 0);
+	--LEDG(7 downto 0) <=x"FF";
+	--LEDG(8) <= '1';
+	  --LEDG(7 downto 0) <= avs_s1_readdata(7 downto 0);
 	
 	-- 7-segment Displays (dot in displays cannot be used)
 	HEX0 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF

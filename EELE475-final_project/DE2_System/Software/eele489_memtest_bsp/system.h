@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu_nios' in SOPC Builder design 'Nios_Qsys'
  * SOPC Builder design path: C:/Users/w92p177/Documents/GitHub/eele489_memtesting/EELE475-final_project/DE2_System/Nios_Qsys.sopcinfo
  *
- * Generated: Sat Jan 31 09:37:25 MST 2015
+ * Generated: Mon Feb 02 21:03:02 MST 2015
  */
 
 /*
@@ -351,7 +351,7 @@
 
 #define ALT_MODULE_CLASS_sys_clk_timer altera_avalon_timer
 #define SYS_CLK_TIMER_ALWAYS_RUN 0
-#define SYS_CLK_TIMER_BASE 0x820
+#define SYS_CLK_TIMER_BASE 0x20
 #define SYS_CLK_TIMER_COUNTER_SIZE 32
 #define SYS_CLK_TIMER_FIXED_PERIOD 0
 #define SYS_CLK_TIMER_FREQ 50000000

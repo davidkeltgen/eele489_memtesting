@@ -138,8 +138,8 @@ applicable agreement for further details.
 	(port
 		(pt 0 528)
 		(output)
-		(text "mem_module_0_mem_ext_export[8..0]" (rect 0 0 161 12)(font "Arial" (font_size 8)))
-		(text "mem_module_0_mem_ext_export[8..0]" (rect 4 517 202 528)(font "Arial" (font_size 8)))
+		(text "mem_module_0_mem_ext_con_export[8..0]" (rect 0 0 181 12)(font "Arial" (font_size 8)))
+		(text "mem_module_0_mem_ext_con_export[8..0]" (rect 4 517 226 528)(font "Arial" (font_size 8)))
 		(line (pt 0 528)(pt 240 528)(line_width 3))
 	)
 	(port
@@ -182,7 +182,7 @@ applicable agreement for further details.
 		(text "E" (rect 245 443 496 896)(font "Arial" (color 0 0 0)))
 		(text "buttons_pio_external_connection" (rect 50 459 286 931)(font "Arial" (color 128 0 0)(font_size 9)))
 		(text "export" (rect 245 483 526 976)(font "Arial" (color 0 0 0)))
-		(text "mem_module_0_mem_ext" (rect 85 499 290 1011)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "mem_module_0_mem_ext_con" (rect 57 499 258 1011)(font "Arial" (color 128 0 0)(font_size 9)))
 		(text "export" (rect 245 523 526 1056)(font "Arial" (color 0 0 0)))
 		(text " Nios_Qsys " (rect 493 544 1052 1098)(font "Arial" ))
 		(line (pt 241 52)(pt 241 76)(line_width 1))

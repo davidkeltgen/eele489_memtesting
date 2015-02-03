@@ -74,7 +74,7 @@ int main(void)
 
 	while(1)
 	{
-	*LEDs = 0x00000A0A;
+	//*LEDs = 0x00000A0A;
 	*MEM_BASE_ADDR = 0xFFFFFFFF;
 	printf("value at memory address: %d\n",  *MEM_BASE_ADDR);
 	//sleep(1);

@@ -64,6 +64,7 @@ END component clk_div;
 	
 	
 begin
+	led_signal(8) <= '1';
 
 	--wre  <= avs_s1_write;
 	--re   <= avs_s1_read;
@@ -72,6 +73,9 @@ begin
 	--led_signal(0) <= wre;
 	--led_signal <= q_sig;
 	avs_s1_readdata <= readdata;
+	--led_signal(7 downto 0) <= readdata(7 downto 0);
+	led_signal(7 downto 0) <= x"FF";--readdata(7 downto 0);
+	
 	--led_signal(8) <= '1';
 	--led_signal(7) <= avs_s1_write;
 	--led_signal(4 downto 0) <= avs_s1_address(4 downto 0);

@@ -150,6 +150,19 @@
          type = "int";
       }
    }
+   element BUTTONS_PIO.s1
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "2128";
+         type = "String";
+      }
+   }
    element LEDs.s1
    {
       datum _lockedAddress
@@ -163,15 +176,7 @@
          type = "String";
       }
    }
-   element sys_clk_timer.s1
-   {
-      datum baseAddress
-      {
-         value = "32";
-         type = "String";
-      }
-   }
-   element sdram_controller_0.s1
+   element mem_module_0.s1
    {
       datum _lockedAddress
       {
@@ -180,7 +185,7 @@
       }
       datum baseAddress
       {
-         value = "8388608";
+         value = "1024";
          type = "String";
       }
    }
@@ -197,7 +202,7 @@
          type = "String";
       }
    }
-   element BUTTONS_PIO.s1
+   element sdram_controller_0.s1
    {
       datum _lockedAddress
       {
@@ -206,20 +211,15 @@
       }
       datum baseAddress
       {
-         value = "2128";
+         value = "8388608";
          type = "String";
       }
    }
-   element mem_module_0.s1
+   element sys_clk_timer.s1
    {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
       datum baseAddress
       {
-         value = "1024";
+         value = "32";
          type = "String";
       }
    }
@@ -264,7 +264,7 @@
  <parameter name="projectName" value="DE2_System.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1422721885382" />
+ <parameter name="timeStamp" value="1422936121034" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk.clk_in" type="clock" dir="end" />
@@ -291,7 +291,7 @@
    type="conduit"
    dir="end" />
  <interface
-   name="mem_module_0_mem_ext"
+   name="mem_module_0_mem_ext_con"
    internal="mem_module_0.mem_ext_con"
    type="conduit"
    dir="end" />
@@ -753,12 +753,12 @@
    end="BUTTONS_PIO.irq">
   <parameter name="irqNumber" value="3" />
  </connection>
- <connection kind="clock" version="13.0" start="clk.clk" end="mem_module_0.clk" />
  <connection
    kind="reset"
    version="13.0"
    start="clk.clk_reset"
    end="mem_module_0.reset" />
+ <connection kind="clock" version="13.0" start="clk.clk" end="mem_module_0.clk" />
  <connection
    kind="avalon"
    version="13.0"
