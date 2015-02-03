@@ -1,0 +1,89 @@
+/*************************************************************************
+* file: main.c
+* Name: Matthew Handley
+* 		David Keltgen
+* Date: 2014-11-25
+*
+*************************************************************************/
+
+#include "main.h"
+
+int main(void)
+{
+	*LEDs = 0x00000000;
+	printf("starting program.............\n");
+//	/* local vars */
+//	int i;
+//
+//	/* reset CRC module */
+//	*CRC_CTRL = CRC_CTRL_MSK_RESET;
+//
+//	printf("CRC_CTRL:    0x%08X, CRC_RESULT:  0x%08X,  Shifted: 0x%08X, VWORD: 0x%08X, CRC_DEBUG:  0x%08X\n",
+//			*CRC_CTRL, *CRC_RESULT, *CRC_SHIFT, *CRC_VWORD, *CRC_DEBUG);
+//
+//	*CRC_CTRL &= ~CRC_CTRL_MSK_RESET;
+//
+//	printf("CRC_CTRL:    0x%08X, CRC_RESULT:  0x%08X,  Shifted: 0x%08X, VWORD: 0x%08X, CRC_DEBUG:  0x%08X\n",
+//			*CRC_CTRL, *CRC_RESULT, *CRC_SHIFT, *CRC_VWORD, *CRC_DEBUG);
+//
+//
+//	*CRC_SHIFT = 0x0;
+//
+//	/* init CRC registers */
+//	*CRC_CTRL = CRC_CTRL_MSK_EN;	// set enable bit
+//	*CRC_DWIDTH = 4;				// data will be written to SHIFT 4 bits at a time
+//	*CRC_PLEN 	= 4;				//
+//	*CRC_POLY 	= 0xB;				//
+//
+//	printf("CRC_CTRL:    0x%08X\n", *CRC_CTRL);
+//	printf("CRC_DWIDTH:  0x%08X\n", *CRC_DWIDTH);
+//	printf("CRC_PLEN:    0x%08X\n", *CRC_PLEN);
+//	printf("CRC_POLY:    0x%08X\n", *CRC_POLY);
+//
+//	printf("CRC_CTRL:    0x%08X, CRC_RESULT:  0x%08X,  Shifted: 0x%08X, VWORD: 0x%08X, CRC_DEBUG:  0x%08X\n",
+//			*CRC_CTRL, *CRC_RESULT, *CRC_SHIFT, *CRC_VWORD, *CRC_DEBUG);
+//
+//	printf("\n");
+//
+//	*CRC_SHIFT = 0x3;
+//	printf("CRC_CTRL:    0x%08X, CRC_RESULT:  0x%08X,  Shifted: 0x%08X, VWORD: 0x%08X, CRC_DEBUG:  0x%08X\n",
+//			*CRC_CTRL, *CRC_RESULT, *CRC_SHIFT, *CRC_VWORD, *CRC_DEBUG);
+//
+//	*CRC_SHIFT = 0x4;
+//	printf("CRC_CTRL:    0x%08X, CRC_RESULT:  0x%08X,  Shifted: 0x%08X, VWORD: 0x%08X, CRC_DEBUG:  0x%08X\n",
+//			*CRC_CTRL, *CRC_RESULT, *CRC_SHIFT, *CRC_VWORD, *CRC_DEBUG);
+//
+//	*CRC_SHIFT = 0xE;
+//	printf("CRC_CTRL:    0x%08X, CRC_RESULT:  0x%08X,  Shifted: 0x%08X, VWORD: 0x%08X, CRC_DEBUG:  0x%08X\n",
+//			*CRC_CTRL, *CRC_RESULT, *CRC_SHIFT, *CRC_VWORD, *CRC_DEBUG);
+//
+//	*CRC_SHIFT = 0xC;
+//	printf("CRC_CTRL:    0x%08X, CRC_RESULT:  0x%08X,  Shifted: 0x%08X, VWORD: 0x%08X, CRC_DEBUG:  0x%08X\n",
+//			*CRC_CTRL, *CRC_RESULT, *CRC_SHIFT, *CRC_VWORD, *CRC_DEBUG);
+//
+//	*CRC_CTRL |= CRC_CTRL_MSK_START;
+//
+//	printf("\nStarted...\n");
+//
+//	do
+//	{
+//		printf("CRC_CTRL:    0x%08X, CRC_RESULT:  0x%08X,  Shifted: 0x%08X, VWORD: 0x%08X, CRC_DEBUG:  0x%08X\n",
+//				*CRC_CTRL, *CRC_RESULT, *CRC_SHIFT, *CRC_VWORD, *CRC_DEBUG);
+//	} while((*CRC_CTRL & CRC_CTRL_MSK_COMPLETE) == 0);
+
+
+	//while(1)
+	//--{
+	*LEDs = 0x0000AAAA;
+	*MEM_BASE_ADDR = 0x00000002;
+	*(MEM_BASE_ADDR + 4) = 0x00000003;
+	printf("value at memory address: %d\n",  *MEM_BASE_ADDR);
+	printf("value at memory address: %d\n",  *(MEM_BASE_ADDR + 4);
+	//sleep(1);
+	//}
+
+	//printf("value at memory address: %d\n",  *MEM_BASE_ADDR);
+
+
+	return 0;
+}

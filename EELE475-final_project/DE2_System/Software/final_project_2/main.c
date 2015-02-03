@@ -70,7 +70,7 @@ int main(void)
 //				*CRC_CTRL, *CRC_RESULT, *CRC_SHIFT, *CRC_VWORD, *CRC_DEBUG);
 //	} while((*CRC_CTRL & CRC_CTRL_MSK_COMPLETE) == 0);
 
-	*LEDS = 0x0F0F0F0F;
+	*LEDs = 0x0F0F0A0A;
 	*MEM_BASE_ADDR = 0xAA;
 	printf("value at memory address: %d\n",  *MEM_BASE_ADDR);
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="36" version="2.0">
+<workbench progressCount="27" version="2.0">
 <workbenchAdvisor/>
-<window height="768" maximized="true" width="1024" x="78" y="-11">
+<window height="768" maximized="true" width="1024" x="720" y="-8">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -18,7 +18,7 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.cdt.ui.editor.CEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -31,37 +31,17 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
-<part id="2"/>
-<part id="3"/>
-<part id="4"/>
-<part id="5"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.h" partName="main.h" path="C:/Users/w92p177/Documents/GitHub/eele489_memtesting/EELE475-final_project/DE2_System/Software/final_project_1/main.h" title="main.h" tooltip="final_project_1/main.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/final_project_1/main.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="907" selectionTopPixel="0"/>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/w92p177/Documents/GitHub/eele489_memtesting/EELE475-final_project/DE2_System/Software/eele489_memtest/main.c" title="main.c" tooltip="eele489_memtest/main.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/eele489_memtest/main.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2848" selectionTopPixel="768"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/w92p177/Documents/GitHub/eele489_memtesting/EELE475-final_project/DE2_System/Software/final_project_1/main.c" title="main.c" tooltip="final_project_1/main.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/final_project_1/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2765" selectionTopPixel="603"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.ui.DefaultTextEditor" name="settings.bsp" partName="settings.bsp" path="C:/Users/w92p177/Documents/GitHub/eele489_memtesting/EELE475-final_project/DE2_System/Software/final_project_1_bsp/settings.bsp" title="settings.bsp" tooltip="final_project_1_bsp/settings.bsp" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/final_project_1_bsp/settings.bsp"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="427" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="system.h" partName="system.h" path="C:/Users/w92p177/Documents/GitHub/eele489_memtesting/EELE475-final_project/DE2_System/Software/final_project_1_bsp/system.h" title="system.h" tooltip="final_project_1_bsp/system.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/final_project_1_bsp/system.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="4878"/>
-</editor>
-<editor id="org.eclipse.ui.DefaultTextEditor" name="create-this-bsp" partName="create-this-bsp" path="C:/Users/w92p177/Documents/GitHub/eele489_memtesting/EELE475-final_project/DE2_System/Software/final_project_1_bsp/create-this-bsp" title="create-this-bsp" tooltip="final_project_1_bsp/create-this-bsp" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/final_project_1_bsp/create-this-bsp"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1088" selectionTopPixel="33"/>
-</editor>
-<editor id="org.eclipse.ui.DefaultTextEditor" name="linker.x" partName="linker.x" path="C:/Users/w92p177/Documents/GitHub/eele489_memtesting/EELE475-final_project/DE2_System/Software/final_project_1_bsp/linker.x" title="linker.x" tooltip="final_project_1_bsp/linker.x" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/final_project_1_bsp/linker.x"/>
-<editorState selectionHorizontalPixel="0" selectionLength="105" selectionOffset="142" selectionTopPixel="0"/>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.h" partName="main.h" path="C:/Users/w92p177/Documents/GitHub/eele489_memtesting/EELE475-final_project/DE2_System/Software/eele489_memtest/main.h" title="main.h" tooltip="eele489_memtest/main.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/eele489_memtest/main.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="336" selectionTopPixel="33"/>
 </editor>
 </editors>
 <views>
@@ -71,7 +51,6 @@
 <view id="org.eclipse.ui.views.PropertySheet" partName="Properties"/>
 <view id="org.eclipse.search.ui.views.SearchView" partName="Search">
 <viewState isPinned="false">
-<view IMemento.internal.id="org.eclipse.cdt.ui.pdomSearchViewPage" definitionColumnWidth="150" locationColumnWidth="300" matchColumnWidth="300" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2" showEnclosingDefinitions="true"/>
 <view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
 </viewState>
 </view>
@@ -79,9 +58,11 @@
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
+<category IMemento.internal.id="Errors (1 item)"/>
+<category IMemento.internal.id="Warnings"/>
 <category IMemento.internal.id="Errors"/>
 </expanded>
-<columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
+<columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="403"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
@@ -98,7 +79,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.ui.navigator.ProjectExplorer" activePerspective="com.altera.sbtgui.ui.cPerspective">
+<perspectives activePart="com.altera.sbtgui.launch.hardware.ByteStreamConsoleView:USB-Blaster on localhost [USB-0].1.0" activePerspective="com.altera.sbtgui.ui.cPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.cdt.internal.ui.CPerspectiveFactory" id="org.eclipse.cdt.ui.CPerspective" label="C/C++"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
@@ -275,7 +256,7 @@
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.25" ratioLeft="250" ratioRight="750" relationship="2" relative="topLeft"/>
 <info folder="true" part="bottom" ratio="0.75" ratioLeft="507" ratioRight="169" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.ProblemView" appearance="2" expanded="2">
+<folder activePageID="com.altera.sbtgui.launch.hardware.ByteStreamConsoleView:USB-Blaster on localhost [USB-0].1.0" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
@@ -292,7 +273,7 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="topRight" ratio="0.60198456" ratioLeft="546" ratioRight="361" relationship="2" relative="org.eclipse.ui.editorss">
+<info folder="true" part="topRight" ratio="0.81642514" ratioLeft="507" ratioRight="114" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -307,11 +288,7 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/final_project_2/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/final_project_2/main.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/eele489_memtest/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/eele489_memtest/main.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/eele489_memtest/main.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/final_project_1/main.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/final_project_1/main.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/final_project_1/main.c"/>
@@ -319,156 +296,160 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/final_project_1_bsp/system.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/final_project_1_bsp/create-this-bsp"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/final_project_1_bsp/linker.x"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/final_project_2/main.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/final_project_2/main.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/eele489_memtest/main.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/eele489_memtest/main.c"/>
 </editors>
-<item historyLabel="main.h" index="1">
-<position info="not_deleted" x="468" y="0"/>
-</item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2596" y="19"/>
-</item>
-<item historyLabel="main.h" index="1">
-<position info="not_deleted" x="468" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2596" y="19"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="2596" y="19"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2596" y="19"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="2596" y="19"/>
-</item>
-<item historyLabel="main.h" index="1">
-<position info="not_deleted" x="468" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="2596" y="19"/>
-</item>
-<item historyLabel="main.h" index="3">
-<position info="not_deleted" x="474" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="1727" y="0"/>
-</item>
-<item historyLabel="main.h" index="3">
-<position info="not_deleted" x="427" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="1275" y="0"/>
-</item>
-<item historyLabel="main.h" index="3">
-<position info="not_deleted" x="427" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position/>
-</item>
-<item historyLabel="main.h" index="4">
-<position info="not_deleted" x="797" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position/>
-</item>
-<item historyLabel="main.h" index="4">
-<position info="not_deleted" x="797" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position/>
-</item>
-<item historyLabel="main.h" index="4">
-<position info="not_deleted" x="422" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position/>
-</item>
-<item historyLabel="main.h" index="4">
-<position info="not_deleted" x="478" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position/>
-</item>
-<item historyLabel="main.h" index="4">
-<position info="not_deleted" x="307" y="5"/>
-</item>
-<item historyLabel="main.c" index="5">
-<position/>
-</item>
-<item historyLabel="main.c" index="2">
-<position/>
-</item>
-<item historyLabel="main.c" index="5">
-<position/>
-</item>
-<item historyLabel="main.h" index="4">
-<position info="not_deleted" x="0" y="1547"/>
-</item>
-<item historyLabel="main.c" index="5">
-<position/>
-</item>
-<item historyLabel="main.h" index="6">
-<position info="not_deleted" x="1192" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position/>
-</item>
-<item historyLabel="main.h" index="6">
-<position info="not_deleted" x="1192" y="0"/>
-</item>
-<item historyLabel="main.h" index="4">
-<position info="not_deleted" x="0" y="1547"/>
-</item>
-<item historyLabel="main.h" index="6">
-<position info="not_deleted" x="1192" y="0"/>
-</item>
-<item historyLabel="main.c" index="5">
-<position/>
-</item>
-<item historyLabel="main.h" index="6">
-<position info="not_deleted" x="237" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="2765" y="9"/>
 </item>
-<item historyLabel="main.c" index="5">
+<item historyLabel="main.c" index="1">
 <position/>
 </item>
-<item historyLabel="main.c" index="2">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="2765" y="0"/>
 </item>
-<item historyLabel="main.c" index="5">
+<item historyLabel="main.c" index="1">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="main.h" index="6">
+<item historyLabel="main.h" index="2">
 <position info="not_deleted" x="237" y="0"/>
 </item>
-<item historyLabel="main.c" index="2">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="2765" y="0"/>
 </item>
-<item historyLabel="main.h" index="6">
+<item historyLabel="main.h" index="2">
 <position info="not_deleted" x="907" y="0"/>
 </item>
-<item historyLabel="main.c" index="7">
+<item historyLabel="main.c" index="3">
 <position info="not_deleted" x="2765" y="0"/>
 </item>
-<item historyLabel="settings.bsp" index="8">
+<item historyLabel="settings.bsp" index="4">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="system.h" index="9">
+<item historyLabel="system.h" index="5">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="create-this-bsp" index="10">
+<item historyLabel="create-this-bsp" index="6">
 <position info="not_deleted" x="532" y="0"/>
 </item>
-<item historyLabel="linker.x" index="11">
+<item historyLabel="linker.x" index="7">
 <position info="not_deleted" x="142" y="105"/>
 </item>
-<item historyLabel="create-this-bsp" index="10">
+<item historyLabel="create-this-bsp" index="6">
 <position info="not_deleted" x="1088" y="0"/>
 </item>
-<item active="true" historyLabel="settings.bsp" index="8">
+<item historyLabel="settings.bsp" index="4">
+<position info="not_deleted" x="427" y="0"/>
+</item>
+<item historyLabel="main.c" index="8">
 <position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.h" index="9">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.c" index="8">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.c" index="8">
+<position info="not_deleted" x="2357" y="0"/>
+</item>
+<item historyLabel="main.c" index="8">
+<position info="not_deleted" x="2596" y="19"/>
+</item>
+<item historyLabel="main.h" index="9">
+<position info="not_deleted" x="404" y="0"/>
+</item>
+<item historyLabel="main.c" index="8">
+<position info="not_deleted" x="2596" y="19"/>
+</item>
+<item historyLabel="main.h" index="9">
+<position info="not_deleted" x="404" y="0"/>
+</item>
+<item historyLabel="main.c" index="8">
+<position info="not_deleted" x="2596" y="19"/>
+</item>
+<item historyLabel="main.c" index="8">
+<position info="not_deleted" x="272" y="0"/>
+</item>
+<item historyLabel="main.c" index="8">
+<position info="not_deleted" x="629" y="0"/>
+</item>
+<item historyLabel="main.h" index="10">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.c" index="11">
+<position info="not_deleted" x="2703" y="0"/>
+</item>
+<item historyLabel="main.h" index="10">
+<position info="not_deleted" x="534" y="0"/>
+</item>
+<item historyLabel="main.c" index="11">
+<position info="not_deleted" x="2737" y="0"/>
+</item>
+<item historyLabel="main.h" index="10">
+<position info="not_deleted" x="534" y="0"/>
+</item>
+<item historyLabel="main.h" index="9">
+<position info="not_deleted" x="404" y="0"/>
+</item>
+<item historyLabel="main.h" index="10">
+<position info="not_deleted" x="534" y="0"/>
+</item>
+<item historyLabel="main.c" index="11">
+<position info="not_deleted" x="2737" y="0"/>
+</item>
+<item historyLabel="main.c" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.h" index="10">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.c" index="11">
+<position info="not_deleted" x="2916" y="13"/>
+</item>
+<item historyLabel="main.h" index="10">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.c" index="11">
+<position info="not_deleted" x="2916" y="13"/>
+</item>
+<item historyLabel="main.c" index="11">
+<position info="not_deleted" x="1919" y="0"/>
+</item>
+<item historyLabel="main.h" index="10">
+<position info="not_deleted" x="315" y="0"/>
+</item>
+<item historyLabel="main.c" index="11">
+<position info="not_deleted" x="1919" y="0"/>
+</item>
+<item historyLabel="main.c" index="11">
+<position info="not_deleted" x="2910" y="0"/>
+</item>
+<item historyLabel="main.h" index="10">
+<position info="not_deleted" x="315" y="0"/>
+</item>
+<item historyLabel="main.c" index="11">
+<position info="not_deleted" x="275" y="0"/>
+</item>
+<item historyLabel="main.h" index="10">
+<position info="not_deleted" x="1" y="0"/>
+</item>
+<item historyLabel="main.c" index="11">
+<position/>
+</item>
+<item historyLabel="main.h" index="10">
+<position info="not_deleted" x="336" y="0"/>
+</item>
+<item historyLabel="main.c" index="11">
+<position info="not_deleted" x="2734" y="0"/>
+</item>
+<item historyLabel="main.c" index="11">
+<position info="not_deleted" x="2780" y="0"/>
+</item>
+<item active="true" historyLabel="main.c" index="11">
+<position info="not_deleted" x="2864" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -488,6 +469,18 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.h" tooltip="eele489_memtest/main.h">
+<persistable path="/eele489_memtest/main.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="eele489_memtest/main.c">
+<persistable path="/eele489_memtest/main.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.h" tooltip="final_project_2/main.h">
+<persistable path="/final_project_2/main.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="final_project_2/main.c">
+<persistable path="/final_project_2/main.c"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="linker.x" tooltip="final_project_1_bsp/linker.x">
 <persistable path="/final_project_1_bsp/linker.x"/>
 </file>
@@ -503,20 +496,8 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="final_project_1/main.c">
 <persistable path="/final_project_1/main.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="eele489_memtest/main.c">
-<persistable path="/eele489_memtest/main.c"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.h" tooltip="final_project_1/main.h">
 <persistable path="/final_project_1/main.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.h" tooltip="eele489_memtest/main.h">
-<persistable path="/eele489_memtest/main.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.h" tooltip="final_project_2/main.h">
-<persistable path="/final_project_2/main.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="final_project_2/main.c">
-<persistable path="/final_project_2/main.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="alt_sys_init.c" tooltip="gps_3_bsp/alt_sys_init.c">
 <persistable path="/gps_3_bsp/alt_sys_init.c"/>

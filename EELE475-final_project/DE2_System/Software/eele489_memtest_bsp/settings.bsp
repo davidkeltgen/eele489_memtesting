@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Feb 2, 2015 9:03:55 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1422936235915</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Feb 2, 2015 11:28:54 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1422944934565</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\w92p177\Documents\GitHub\eele489_memtesting\EELE475-final_project\DE2_System\Software\eele489_memtest_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>C:\Users\w92p177\Documents\GitHub\eele489_memtesting\EELE475-final_project\DE2_System\Nios_Qsys.sopcinfo</SopcDesignFile>

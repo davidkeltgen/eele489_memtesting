@@ -17,3 +17,23 @@ nios2-elf-objdump --disassemble --syms --all-header --source eele489_memtest.elf
 [eele489_memtest build complete]
 
 **** Build Finished ****
+
+**** Build of configuration Nios II for project eele489_memtest ****
+
+make all 
+Info: Building ../eele489_memtest_bsp/
+make --no-print-directory -C ../eele489_memtest_bsp/
+[BSP build complete]
+[eele489_memtest build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project eele489_memtest ****
+
+make all 
+Info: Building ../eele489_memtest_bsp/
+make --no-print-directory -C ../eele489_memtest_bsp/
+[BSP build complete]
+[eele489_memtest build complete]
+
+**** Build Finished ****

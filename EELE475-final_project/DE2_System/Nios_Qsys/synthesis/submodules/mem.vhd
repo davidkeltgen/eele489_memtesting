@@ -56,7 +56,6 @@ END component clk_div;
 	signal wrstate			: std_logic_vector(1 downto 0) := "00";
 	signal counter 		: integer := 0;
 	signal readdata      : std_logic_vector(31 downto 0);
-	
 	signal wre  : std_logic;
 	signal re   : std_logic;
 	signal addr : std_logic_vector(7 downto 0);
@@ -64,15 +63,16 @@ END component clk_div;
 	
 	
 begin
-	--led_signal(8) <= '1';
+	led_signal(8) <= '1';
 
-	--wre  <= avs_s1_write;
+	wre  <= avs_s1_write;
 	--re   <= avs_s1_read;
 	--addr <= avs_s1_address;
 	--led_signal(7 downto 1) <= "1111111";
 	--led_signal(0) <= wre;
 	--led_signal <= q_sig;
 	avs_s1_readdata <= readdata;
+	--led_signal(7 downto 0) <= readdata(7 downto 0);
 	led_signal(7 downto 0) <= readdata(7 downto 0);
 	
 	--led_signal(8) <= '1';
@@ -80,14 +80,17 @@ begin
 	--led_signal(4 downto 0) <= avs_s1_address(4 downto 0);
 	--led_signal(6 downto 5)<= readdata(1 downto 0);
 
---process (clk)
+process (clk)
 --		variable readdata : std_logic_vector(7 downto 0);
---	begin
+	begin
+	if(wre = '1') then
+		data_sig <= avs_s1_writedata;
 --				ram_wren <= '1';
 --				--wraddress_sig <= addr; -- for testing purposes, addr should be zero (i will check that next
 --				wraddress_sig <= "00000";
 --				--avs_s1_writedata <= "10101010";
---	end process;
+	end if;
+	end process;
 --	
 --	process (clk)
 --		--variable readdata : std_logic_vector(7 downto 0);
@@ -110,11 +113,11 @@ begin
 
 	twoptram_inst : twoptram PORT MAP (
 		clock	 => clk,
-		data	 => avs_s1_writedata,
+		data	 => data_sig,
 		rdaddress	 => avs_s1_address,
 		wraddress	 => avs_s1_address,
-		wren	 => avs_s1_write,
-		--wren => '1',
+		--wren	 => avs_s1_write,
+		wren => '1',
 		q	 => readdata
 	);
 	

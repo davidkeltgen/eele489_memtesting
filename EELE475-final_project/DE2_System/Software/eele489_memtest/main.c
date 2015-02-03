@@ -7,6 +7,7 @@
 *************************************************************************/
 
 #include "main.h"
+#include <unistd.h>
 
 int main(void)
 {
@@ -72,15 +73,35 @@ int main(void)
 //	} while((*CRC_CTRL & CRC_CTRL_MSK_COMPLETE) == 0);
 
 
-	while(1)
+	//while(1)
+	//{
+	//*LEDs = 0x0000AAAA;
+	int j = 0;
+	int i = 0;
+	for(j = 0; j < 255; j++)
 	{
-	*LEDs = 0x00000A0A;
-	*MEM_BASE_ADDR = 0xFFFFFFFF;
-	printf("value at memory address: %d\n",  *MEM_BASE_ADDR);
-	//sleep(1);
+		*(MEM_BASE_ADDR + (j * 4)) = j;
+		printf("value at memory address: %d\n",  *(MEM_BASE_ADDR));// + (j * 4)));
+		while(i <100000)
+		{i++;}
+		i = 0;
 	}
 
-	printf("value at memory address: %d\n",  *MEM_BASE_ADDR);
+	//*MEM_BASE_ADDR = 0x00000001;
+	//printf("value at memory address: %d\n",  *MEM_BASE_ADDR);
+	//while(i <1000000)
+
+	//i = 0;
+	//*MEM_BASE_ADDR_2 = 0x00000002;
+	//printf("value at memory address: %d\n",  *MEM_BASE_ADDR_2);
+	//while(i <1000000)
+	//	{i++;}
+	//*MEM_BASE_ADDR_2 = 0x00000003;
+	//printf("value at memory address: %d\n",  *MEM_BASE_ADDR_2);
+
+	//}
+
+	//printf("value at memory address: %d\n",  *MEM_BASE_ADDR);
 
 
 	return 0;

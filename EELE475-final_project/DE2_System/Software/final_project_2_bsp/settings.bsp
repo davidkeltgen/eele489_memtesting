@@ -2,9 +2,9 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Dec 10, 2014 11:00:12 AM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1418234412033</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>C:\Users\w92p177\Documents\GitHub\EELE475\DE2_System\Software\final_project_2_bsp</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>Feb 2, 2015 9:52:53 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1422939173588</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>C:\Users\w92p177\Documents\GitHub\eele489_memtesting\EELE475-final_project\DE2_System\Software\final_project_2_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>C:\Users\w92p177\Documents\GitHub\EELE475\DE2_System\Nios_Qsys.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
