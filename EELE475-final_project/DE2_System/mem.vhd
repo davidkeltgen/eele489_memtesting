@@ -48,10 +48,10 @@ END component clk_div;
 	signal dram_dqm : std_logic_vector(1 downto 0); 
 	signal clk_nios : std_logic;
 	signal ram_wren 		: std_logic;
-	signal rdaddress_sig : std_logic_vector(4 downto 0);
-	signal wraddress_sig : std_logic_vector(4 downto 0);
-	signal data_sig 		: std_logic_vector(7 downto 0);
-	signal q_sig			: std_logic_vector(7 downto 0);
+	signal rdaddress_sig : std_logic_vector(7 downto 0);
+	signal wraddress_sig : std_logic_vector(7 downto 0);
+	signal data_sig 		: std_logic_vector(31 downto 0);
+	signal q_sig			: std_logic_vector(31 downto 0);
 	signal rstate			: std_logic_vector(1 downto 0) := "00";
 	signal wrstate			: std_logic_vector(1 downto 0) := "00";
 	signal counter 		: integer := 0;
@@ -60,7 +60,7 @@ END component clk_div;
 	signal wre  : std_logic;
 	signal re   : std_logic;
 	signal addr : std_logic_vector(7 downto 0);
-	signal data_in : std_logic_vector(31 downto 0);
+	--signal data_in : std_logic_vector(31 downto 0);
 	
 	
 begin
@@ -72,10 +72,10 @@ begin
 	--led_signal(0) <= wre;
 	--led_signal <= q_sig;
 	avs_s1_readdata <= readdata;
-	led_signal(8) <= '1';
-	led_signal(7) <= avs_s1_write;
-	led_signal(4 downto 0) <= avs_s1_address(4 downto 0);
-	led_signal(6 downto 5)<= readdata(1 downto 0);
+	--led_signal(8) <= '1';
+	--led_signal(7) <= avs_s1_write;
+	--led_signal(4 downto 0) <= avs_s1_address(4 downto 0);
+	--led_signal(6 downto 5)<= readdata(1 downto 0);
 
 --process (clk)
 --		variable readdata : std_logic_vector(7 downto 0);
@@ -110,8 +110,8 @@ begin
 		data	 => avs_s1_writedata,
 		rdaddress	 => avs_s1_address,
 		wraddress	 => avs_s1_address,
-		--wren	 => avs_s1_write,
-		wren => '1',
+		wren	 => avs_s1_write,
+		--wren => '1',
 		q	 => readdata
 	);
 	
